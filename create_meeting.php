@@ -108,6 +108,7 @@
                     echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
                     echo "<td>".$row['duration']."</td>";
                     echo "<td><a target='_blank' href='getJoinMeetingUrlModerator.php?id=".$row['id']."'>start</a></td>";
+                    echo "<td><a target='_blank' href='isMeetingRunning.php?id=".$row['id']."'>status</a></td>";
                     echo "</tr>";
                 }
             ?>
