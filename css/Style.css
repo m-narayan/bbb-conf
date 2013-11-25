@@ -1,0 +1,223 @@
+*{
+    margin: 0px;
+    padding: 0px;
+	
+}
+#top{
+    height: 82px;
+    margin-top: 10px;
+}
+#logo{
+    background-image: url('../images/Logo_1.png');
+    height:83px; 
+    width:  309px;
+    margin-left: 35px;
+    float: left;
+    background-repeat:no-repeat;
+}
+#logout{
+    float: right;
+    padding-right: 40px;
+    padding-top: 25px; 
+}
+.Btn{
+    border-radius: 7px;
+    display: block;
+    text-align: center;
+    background-color: orangered;
+    width: 120px;
+    height: 26px;
+    color: white;
+    font-size: 14px;
+    font-family: Tahoma;
+    border-style: hidden;
+}
+
+
+#content{
+    height: 520px;
+    border-style: solid;
+    /*border-width: thin;   */
+    border-color: #BBBBBB;
+}
+#leftside{
+  
+    overflow: hidden;
+    float: left;
+    width: 180px;
+    height: 520px;
+   	background-color:#16809A;
+	
+}
+#rightside{
+    height: 520px;
+    background-color: #f5eedb;
+}
+
+#footer{
+    height: 20px;
+    background-color: #000;
+}
+.menue{
+    margin-top: 0px;
+    margin-left: 2px;
+    text-align: left;
+
+}
+.leftmenu{
+
+    height: 42px;
+    display: block;
+    width: 180px;
+    border-bottom-style: solid;
+    border-width: 5px;
+    border-color: #ffc90e;
+    border-bottom-left-radius: 13px;	
+    border-width: 2px;
+    line-height: 42px;
+    margin-top:0px;
+
+}
+
+.tt a{
+    display: block;
+    text-decoration: none;
+    font-weight:bold;
+    color: white;
+    font-family:arial;
+    width: 230px;
+    padding-left:20px; 
+    height: 42px;
+    text-align: left;
+}
+
+.tt1 a{
+    display: block;
+    text-decoration: none;
+    font-weight:bold;
+    color:#2690cc;
+    font-family:arial;
+    width: 230px;
+    padding-left:20px; 
+    height: 42px;
+    text-align: left;
+    background-color:transparent;
+    border-style: none;
+    border-bottom-style: solid;
+    border-color: #0077b0;
+    border-radius:13px;
+
+    background-color:#f5eedb;
+    border-color:gray;
+    border-style: solid;
+    border-radius: 13px; 	
+
+}
+
+
+#ret_data{
+    padding-top: 10px;
+    padding-left: 50px;
+}
+.Lbutton {
+    display: inline-block;
+    zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+    display: inline;
+    vertical-align: baseline;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .2em 2em .3em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    width:120px;
+    color:#FFFFFF;
+}
+.Lbutton:hover {
+    text-decoration: none;
+}
+.Lbutton:active {
+    position: relative;
+    top: 1px;
+}
+.orange {
+    color:#FFFFFF;
+    border: solid 1px #fd6100;
+    background: #c62801;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c62801), to(#fd6100));
+    background: -moz-linear-gradient(top,  #c62801,  #fd6100);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62801', endColorstr='#fd6100');
+}
+.orange:hover {
+    background: #007ead;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fd6100), to(#fd6100));
+    background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62801', endColorstr='#fd6100');
+}
+.orange:active {
+    color:#FFFFFF;
+    border: solid 1px #fd6100;
+    background: #0095cd;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c62801), to(#fd6100));
+    background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62801', endColorstr='#fd6100');
+}
+
+
+
+.createNew{  width:auto; margin-top:5px; margin-left:40px;}
+
+.cNbutton {
+    display: inline-block;
+    zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+    display: inline;
+    vertical-align: baseline;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 12px/100%  Arial, Helvetica, sans-serif;
+     font-weight: bold;
+    padding: .5em 1em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    width:150px;
+    color:#FFFFFF;
+    margin-left:25px;
+}
+.cNbutton:hover {
+    text-decoration: none;
+}
+.cNbutton:active {
+    position: relative;
+    top: 1px;
+}
+
+#rightform{
+    height: 520px;
+    color:#000;
+    background-color: #fff;
+    text-align: center;
+}
+.rightform{
+   text-align: left;
+   min-width: 30%;
+    margin: 0px auto;
+}
+th{
+    background-color: #16809A;
+}
