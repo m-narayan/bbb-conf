@@ -12,10 +12,10 @@
     include 'check.php';
     $dbAccess = new DBAccess();
     if(isset($_POST['submit'])){
-        $dbAccess->addServer($_POST['server_name'],$_POST['url'],$_POST['salt'],$_POST['status']);
+        $dbAccess->addUserSettings($_POST['user'],$_POST['period'],$_POST['max_conference']);
     }
 
-    $result=$dbAccess->getAllServers();
+    $result=$dbAccess->getAllSettings();
 
 ?>
 
@@ -51,41 +51,42 @@
         <?php include_once 'assets/main/LeftSideNew.php'; ?>
         <div id="rightform">
             <br>
-            <h3 style="text-align: center;">BBB Server</h3>
-            <form method="post" action="" name="frm" onsubmit="return server();">
+            <h3 style="text-align: center;">Settings</h3>
+            <form method="post" action="" name="frm" onsubmit="return settings();">
                 <table align="center" class="rightform">
-                    <tr><td>Server Name</td><td><input type="text" name="server_name"  size="40" maxlength="250"></td></tr>
-                    <tr><td>BBB URL</td><td><input type="text" name="url" size="40" maxlength="250"></td></tr>
-                    <tr><td>Salt</td><td><input type="text" name="salt"  size="40" maxlength="250"></td></tr>
-                    <tr><td>Status</td><td>
-                        <select name="status">
-                            <option value="1">Active</option>
-                            <option value="0">Passive</option>
-                        </select>
-                    </td></tr>
+                    <tr><td>User</td>
+                        <td>
+                            <select name="user">
+                            <option value='0'>Select</option>
+                            <?php $users=$dbAccess->getAllUsersExceptAdmin();
+                            while($row=mysql_fetch_array($users)){
+                                echo "<option value='".$row['id']."'>".$row['full_name']."</option>";
+                            }
+                            ?>
+                        </td>
+                    </tr>
+                    <tr><td>Period</td>
+                        <td>
+                            <input type="radio" name="period" value="0" checked="checked">Weekly
+                            <input type="radio" name="period" value="1">Monthly
+                        </td>
+                    </tr>
+
+                    <tr><td>Max Conference</td><td><input onkeypress="return isNumberKey(event)" type="text" name="max_conference" size="13" maxlength="3"></td></tr>
                     <tr><td align="center" colspan="2">&nbsp;</td></tr>
                     <tr><td align="center" colspan="2"><input type="submit" name="submit" value="Save" class="Btn"></td></tr>
                 </table>
             </form>
             <br>
             <table align="center" class="rightform" border="1">
-            <tr><th>Server Name</th><th>BBB URL</th><th>Salt</th><th>Status</th><th>Edit</th><th>Delete</th></tr>
+            <tr><th>User</th><th style="text-align: right;">Period</th><th style='text-align: right;'>Max Conference</th></tr>
             <?php
                 while($row=mysql_fetch_array($result)){
                     echo "<tr>";
-                    echo "<td>".$row['name']."</td>";
-                    echo "<td>".$row['url']."</td>";
-                    echo "<td>".$row['salt']."</td>";
-                    $status=array("Passive","Active");
-                    echo "<td>".$status[$row['status']]."</td>";
-                    echo "<td><a href='editserver.php?id=".$row['id']."'>Edit</a></td>";
-                    echo "<td>";
-                    if(!$dbAccess->checkServerInUse($row['id'])){
-                        echo "<a href='deleteserver.php?id=".$row['id']."'>Delete</a>";
-                    }else{
-                        echo "In Use";
-                    }
-                    echo "</td>";
+                    echo "<td>".$row['full_name']."</td>";
+                    $period=array("Weekly","Monthly");
+                    echo "<td style='text-align: right;'>".$period[$row['period']]."</td>";
+                    echo "<td style='text-align: right;'>".$row['max_conference']."</td>";
                     echo "</tr>";
                 }
             ?>

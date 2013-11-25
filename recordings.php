@@ -11,7 +11,7 @@
     }
 
     $dbAccess= new DBAccess();
-    $result=$dbAccess->getJoinRequests($_SESSION['owner_id']);
+    $result=$dbAccess->enrolledConferences($_SESSION['owner_id']);
 
 ?>
 
@@ -46,9 +46,9 @@
         <?php include_once 'assets/main/LeftSideNew.php'; ?>
         <div id="rightform">
             <br>
-            <h3 style="text-align: center;">Directory</h3>
+            <h3 style="text-align: center;">Recordings</h3>
             <table align="center" class="rightform" border="1">
-            <tr><th>User</th><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>Action</th></tr>
+            <tr><th>User</th><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>Recordings</th></tr>
             <?php
                 while($row=mysql_fetch_array($result)){
                     echo "<tr>";
@@ -57,14 +57,9 @@
                     echo "<td>".$row['welcome_msg']."</td>";
                     echo "<td>".$row['speaker']."</td>";
                     echo "<td>".$row['topic']."</td>";
-                    echo "<td>".$row['meeting_date']."</td>";
+                    echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
                     echo "<td>".$row['duration']."</td>";
-//                    if($meeting->checkEnrollment($row['id'],$_SESSION['owner_id'])){
-//                        echo "<td><a href='deenroll.php?meeting_id=".$row['id']."'>DeEnroll</a></td>";
-//                    }else{
-                        echo "<td><a href='enroll.php?meeting_id=".$row['id']."'>Enroll</a></td>";
-//                    }
-
+                    echo "<td><a target='_blank' href='getRecordings.php?id=".$row['id']."'>View</a></td>";
                     echo "</tr>";
                 }
             ?>

@@ -29,7 +29,7 @@ function server(){
     }
 }
 
-function meeting(){
+function meeting(id){
     if(trim1(document.frm.name.value)==""){
         alert("Please enter Name");
         document.frm.name.focus();
@@ -49,6 +49,38 @@ function meeting(){
     }else if(trim1(document.frm.duration.value)==""){
         alert("Please enter duration");
         document.frm.duration.focus();
+        return false;
+    }else{
+        response="";
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                response=xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET","max_meeting.php?id="+id,false);
+        xmlhttp.send();
+        if(response==""){
+            return true;
+        }else{
+            alert(response);
+            return false;
+        }
+    }
+}
+
+function settings(){
+    if(document.frm.user.selectedIndex==0){
+        alert("Please select user");
+        document.frm.user.focus();
+        return false;
+    }else if(trim1(document.frm.max_weekly.value)==""){
+        alert("Please enter Max Conference Weekly");
+        document.frm.max_weekly.focus();
+        return false;
+    }else if(trim1(document.frm.max_monthly.value)==""){
+        alert("Please enter Max Conference Monthly");
+        document.frm.max_monthly.focus();
         return false;
     }else{
         return true;

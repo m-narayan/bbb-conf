@@ -57,7 +57,7 @@
             <form method="post" action="" name="frm" onsubmit="return server();">
                 <table align="center" class="rightform">
                     <tr><td>Server Name</td><td><input value="<?php echo $row['name']; ?>" type="text" name="server_name"  size="40" maxlength="250"></td></tr>
-                    <tr><td>Big Blue Button URL</td><td><input value="<?php echo $row['url']; ?>" type="text" name="url" size="40" maxlength="250"></td></tr>
+                    <tr><td>BBB URL</td><td><input value="<?php echo $row['url']; ?>" type="text" name="url" size="40" maxlength="250"></td></tr>
                     <tr><td>Salt</td><td><input value="<?php echo $row['salt']; ?>" type="text" name="salt"  size="40" maxlength="250"></td></tr>
                     <tr><td>Status</td><td>
                         <select name="status">

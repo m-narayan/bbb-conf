@@ -27,48 +27,6 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.alerts.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="css/rhd.css"/>  
 
-        <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
-        <script type="text/javascript" src="js/jquery.ui.draggable.js" ></script>    
-        <script type="text/javascript" src="js/jquery.alerts.js"></script>
-        <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
-        <script type="text/javascript" src="js/jquery-ui.js"></script>      
-        <script type="text/javascript" src='js/jquery.simplemodal.js'></script>
-        <script type="text/javascript" src='assets/Catalogue/js/Catalogue.js'></script>
-        <script type="text/javascript" src="js/LoginFields.js"></script>
-        <script language="javascript" type="text/javascript" src="js/datetimepicker.js">
-            //Date Time Picker script- by TengYong Ng of http://www.rainforestnet.com
-            //Script featured on JavaScript Kit (http://www.javascriptkit.com)
-            //For this script, visit http://www.javascriptkit.com
-        </script>
-        <SCRIPT language=Javascript>
-            <!--
-            function isNumberKey(evt)
-            {
-                var charCode = (evt.which) ? evt.which : event.keyCode
-                if (charCode > 31 && (charCode < 48 || charCode > 57))
-                    return false;
-
-                return true;
-            }
-            //-->
-        </SCRIPT>
-        <script type="text/javascript">
-            function changeHashOnLoad() {
-                window.location.href += "#";
-                setTimeout("changeHashAgain()", "50");
-            }
-
-            function changeHashAgain() {
-                window.location.href += "1";
-            }
-
-            var storedHash = window.location.hash;
-            window.setInterval(function() { 
-                if (window.location.hash != storedHash) { window.location.hash = storedHash; } }, 50);
-
-        </script>  
-
-
 
     </head>
     <?php
@@ -87,16 +45,19 @@
 
         <?php include_once 'assets/main/LeftSideNew.php'; ?>
         <div id="rightform">
+            <br>
             <h3 style="text-align: center;">Enrolled Conference</h3>
             <table align="center" class="rightform" border="1">
-            <tr><th>User</th><th>Name</th><th>Welcome Message</th><th>Date</th><th>Duration</th><th>DeEnroll</th><th>Join</th></tr>
+            <tr><th>User</th><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>DeEnroll</th><th>Join</th></tr>
             <?php
                 while($row=mysql_fetch_array($result)){
                     echo "<tr>";
                     echo "<td>".$row['full_name']."</td>";
                     echo "<td>".$row['name']."</td>";
                     echo "<td>".$row['welcome_msg']."</td>";
-                    echo "<td>".$row['meeting_date']."</td>";
+                    echo "<td>".$row['speaker']."</td>";
+                    echo "<td>".$row['topic']."</td>";
+                    echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
                     echo "<td>".$row['duration']."</td>";
                     echo "<td><a href='deenroll.php?meeting_id=".$row['id']."'>DeEnroll</a></td>";
                     echo "<td><a target='_blank' href='getJoinMeetingUrlAttendee.php?id=".$row['id']."'>Join</a></td>";

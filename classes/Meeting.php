@@ -63,7 +63,11 @@ class Meeting {
         $dbAccess= new DBAccess();
         $row=$dbAccess->getMeeting($id);
 
+        $server=$dbAccess->getServer($row['server_id']);
+
         $bbb = new BigBlueButton();
+        $bbb->setBBBUrlandSalt($server['url'],$server['salt']);
+
 
         $joinParams = array(
             'meetingId' => $row['meetingid'], 				// REQUIRED - We have to know which meeting to join.
@@ -94,7 +98,10 @@ class Meeting {
         $dbAccess= new DBAccess();
         $row=$dbAccess->getMeeting($id);
 
+        $server=$dbAccess->getServer($row['server_id']);
+
         $bbb = new BigBlueButton();
+        $bbb->setBBBUrlandSalt($server['url'],$server['salt']);
 
         $joinParams = array(
             'meetingId' => $row['meetingid'], 				// REQUIRED - We have to know which meeting to join.
@@ -116,6 +123,48 @@ class Meeting {
             print_r($result);
         }
         return $result;
+    }
+
+    public function getRecordings($id){
+
+        $dbAccess= new DBAccess();
+        $row=$dbAccess->getMeeting($id);
+
+        $server=$dbAccess->getServer($row['server_id']);
+
+        $bbb = new BigBlueButton();
+        $bbb->setBBBUrlandSalt($server['url'],$server['salt']);
+
+        $recordingsParams = array(
+            'meetingId' => $row['meetingid']
+        );
+
+        $itsAllGood = true;
+        try {$result = $bbb->getRecordingsWithXmlResponseArray($recordingsParams);}
+        catch (Exception $e) {
+            echo 'Caught exception: ', $e->getMessage(), "\n";
+            $itsAllGood = false;
+        }
+
+        if ($itsAllGood == true) {
+            // If it's all good, then we've interfaced with our BBB php api OK:
+            if ($result == null) {
+                // If we get a null response, then we're not getting any XML back from BBB.
+                echo "Failed to get any response. Maybe we can't contact the BBB server.";
+            }
+            else {
+                // We got an XML response, so let's see what it says:
+                //var_dump($result);
+                if ($result['returncode'] == 'SUCCESS') {
+                    // Then do stuff ...
+                    //echo "<p>Meeting info was found on the server.</p>";
+                }
+                else {
+                    echo "<p>Failed to get meeting info.</p>";
+                }
+            }
+        }
+        return($result);
     }
 }
 ?>
