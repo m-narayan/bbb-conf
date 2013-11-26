@@ -26,6 +26,6 @@ try {$result = $bbb->isMeetingRunningWithXmlResponseArray($meetingId);}
 
 if ($itsAllGood == true) {
 	//Output results to see what we're getting:
-	print_r($result);
+    echo($result['running']);
 }	
 ?>

@@ -61,7 +61,7 @@
         <div id="rightform">
             <br>
             <h3 style="text-align: center;">Create Conference</h3>
-            <form method="post" action="" name="frm" onsubmit="return meeting('<?php echo $_SESSION['owner_id']; ?>');">
+            <form method="post" enctype="multipart/form-data" action="" name="frm" onsubmit="return meeting('<?php echo $_SESSION['owner_id']; ?>');">
                 <table align="center" class="rightform">
                     <tr><td>Name</td><td><input type="text" name="name"  size="40" maxlength="250"></td></tr>
                     <tr><td>Welcome Message</td><td><input type="text" name="welcome_msg"  size="40" maxlength="250"></td></tr>
@@ -90,6 +90,7 @@
                             <input type="text" name="duration" onkeypress="return isNumberKey(event)" size="5" maxlength="3">
                         </td>
                     </tr>
+                    <tr><td>Presentation</td><td><input type="file" name="SMLD"  ></td></tr>
                     <tr><td align="center" colspan="2">&nbsp;</td></tr>
                     <tr><td align="center" colspan="2"><input type="submit" name="submit" value="Save" class="Btn"></td></tr>
                 </table>
@@ -107,8 +108,7 @@
                     echo "<td>".$row['topic']."</td>";
                     echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
                     echo "<td>".$row['duration']."</td>";
-                    echo "<td><a target='_blank' href='getJoinMeetingUrlModerator.php?id=".$row['id']."'>start</a></td>";
-                    echo "<td><a target='_blank' href='isMeetingRunning.php?id=".$row['id']."'>status</a></td>";
+                    echo "<td><a target='_blank' href='getJoinMeetingUrlModerator.php?id=".$row['id']."'>Start Conference</a></td>";
                     echo "</tr>";
                 }
             ?>

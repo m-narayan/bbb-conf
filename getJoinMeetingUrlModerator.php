@@ -7,7 +7,7 @@ require_once('classes/Meeting.php');
 
 $auth_right = new Authorization();
 if(!$auth_right->checkAccessRight()) {
-    header('Location: index.php');
+    //header('Location: index.php');
 }
 
 $meeting=new Meeting();

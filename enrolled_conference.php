@@ -4,6 +4,7 @@
     require_once('classes/Authorization.php');
     require_once('include/bbb-api.php');
     require_once('classes/DBAccess.php');
+    require_once('classes/Meeting.php');
 
     $auth_right = new Authorization();
     if(!$auth_right->checkAccessRight()) {
@@ -19,7 +20,8 @@
 
 <html lang="en">
     <head>
-        <meta charset="utf-8" /> 
+        <meta charset="utf-8" />
+        <meta http-equiv="refresh" content="60" />
         <title>Conference</title>
         <!--     Cascading Style Sheet --> 
         <link rel="stylesheet" type="text/css" href="css/Style.css"/>
@@ -50,6 +52,7 @@
             <table align="center" class="rightform" border="1">
             <tr><th>User</th><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>DeEnroll</th><th>Join</th></tr>
             <?php
+                $meeting=new Meeting();
                 while($row=mysql_fetch_array($result)){
                     echo "<tr>";
                     echo "<td>".$row['full_name']."</td>";
@@ -60,7 +63,12 @@
                     echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
                     echo "<td>".$row['duration']."</td>";
                     echo "<td><a href='deenroll.php?meeting_id=".$row['id']."'>DeEnroll</a></td>";
-                    echo "<td><a target='_blank' href='getJoinMeetingUrlAttendee.php?id=".$row['id']."'>Join</a></td>";
+                    $status=$meeting->isMeetingRunning($row['id']);
+                    if($status=="true"){
+                        echo "<td><a target='_blank' href='getJoinMeetingUrlAttendee.php?id=".$row['id']."'>Join</a></td>";
+                    }else{
+                        echo "<td>Not Running</td>";
+                    }
                     echo "</tr>";
                 }
             ?>

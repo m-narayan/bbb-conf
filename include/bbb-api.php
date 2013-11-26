@@ -65,7 +65,7 @@ class BigBlueButton {
         $this->_bbbServerBaseUrl 	= $url;
     }
 	
-	private function _processXmlResponse($url){
+	private function _processXmlResponse($url,$preUploadXML=""){
 	/* 
 	A private utility method used by other public methods to process XML responses.
 	*/
@@ -75,6 +75,13 @@ class BigBlueButton {
 			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false);	
 			curl_setopt( $ch, CURLOPT_URL, $url );
 			curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+            if ( $preUploadXML != "" && $preUploadXML != null ) {
+                //curl_setopt($ch, CURLOPT_POST, 0);
+                curl_setopt( $ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: text/xml;
+charset=utf-8'));
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $preUploadXML);
+            }
 			curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 			$data = curl_exec( $ch );
 			curl_close( $ch );
@@ -149,7 +156,7 @@ class BigBlueButton {
 		return ( $creationUrl.$params.'&checksum='.sha1("create".$params.$this->_securitySalt) );
 	}
 			
-	public function createMeetingWithXmlResponseArray($creationParams) {
+	public function createMeetingWithXmlResponseArray($creationParams,$preUploadXML) {
 		/*
 		USAGE: 
 		$creationParams = array(
@@ -168,7 +175,7 @@ class BigBlueButton {
 			'meta_category' => '', 		-- Use to pass additional info to BBB server. See API docs to enable.
 		);
 		*/
-		$xml = $this->_processXmlResponse($this->getCreateMeetingURL($creationParams));
+		$xml = $this->_processXmlResponse($this->getCreateMeetingURL($creationParams),$preUploadXML);
 
 		if($xml) {
 			if($xml->meetingID) 
