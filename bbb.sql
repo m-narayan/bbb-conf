@@ -27,7 +27,7 @@ CREATE TABLE `invitations` (
   `meeting_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,6 +36,7 @@ CREATE TABLE `invitations` (
 
 LOCK TABLES `invitations` WRITE;
 /*!40000 ALTER TABLE `invitations` DISABLE KEYS */;
+INSERT INTO `invitations` VALUES (23,78,1),(24,82,1);
 /*!40000 ALTER TABLE `invitations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,7 +77,7 @@ CREATE TABLE `meetings` (
   UNIQUE KEY `index_bigbluebutton_rooms_on_meetingid` (`meetingid`),
   UNIQUE KEY `index_bigbluebutton_rooms_on_voice_bridge` (`voice_bridge`),
   KEY `index_bigbluebutton_rooms_on_server_id` (`server_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,6 +86,7 @@ CREATE TABLE `meetings` (
 
 LOCK TABLES `meetings` WRITE;
 /*!40000 ALTER TABLE `meetings` DISABLE KEYS */;
+INSERT INTO `meetings` VALUES (78,12,7,NULL,'529491e24e71b','test1','52947e273a0af','52947e273a0f7','test1',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',111,20131126,'test1','test1','active','11:55'),(79,12,7,NULL,'5294859f58a01','test2','5294846cdfc01','5294846cdfc61','test2',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',333,20131126,'test2','test2','active','11:55'),(80,12,7,NULL,'529485af10081','werew','529485ade2ade','529485ade2b23','ewrwe',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',32,20131126,'ewrew','ewrew','active','12:27'),(81,12,7,NULL,NULL,'fdgd','52948f1a6a7d7','52948f1a6a81f','fdgfd',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',324,20131126,'fdgfd','fdgfd','active','13:07'),(82,13,7,NULL,'52949d10e4fec','aaa','5294928669242','5294928669288','aaa',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',21,20131126,'aaa','aaa','active','13:22');
 /*!40000 ALTER TABLE `meetings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +117,7 @@ CREATE TABLE `servers` (
 
 LOCK TABLES `servers` WRITE;
 /*!40000 ALTER TABLE `servers` DISABLE KEYS */;
-INSERT INTO `servers` VALUES (12,'8GB Server','http://106.187.45.141/bigbluebutton/','714f97ab3527c19648e201a729cd686f',NULL,NULL,NULL,NULL,1);
+INSERT INTO `servers` VALUES (12,'Beacon BBB','http://106.187.45.141/bigbluebutton/','714f97ab3527c19648e201a729cd686f',NULL,NULL,NULL,NULL,0),(13,'Agora BBB','http://10.1.10.251/bigbluebutton/','d1d0bcb8412bafb6eaac811c2af2b6e2',NULL,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `servers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,7 +134,7 @@ CREATE TABLE `user_settings` (
   `max_conference` int(11) DEFAULT NULL,
   `period` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-25 17:38:11
+-- Dump completed on 2013-11-29 11:46:49

@@ -30,11 +30,16 @@
                 // Unsuccessful in Login
             }
             else {
-                $result = $login->authenticateUser($_POST['nametxt'],$_POST['passtxt']);
+                $reply_json = $login->authenticateUser($_POST['nametxt'],$_POST['passtxt']);
+                if(isset($reply_json->user_email)){
+                    $dbAccess= new DBAccess();
+                    $dbAccess->createOrUpdateUser($_POST['nametxt'],$_POST['passtxt'],$reply_json->user_email,$reply_json->user_name);
+                }
                 if($dbAccess->checkUser($_POST['nametxt'],$_POST['passtxt'])==1){
                     $row=$dbAccess->getUser($_POST['nametxt'],$_POST['passtxt']);
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['name'] = $row['login'];
+                    $_SESSION['password'] = $row['password'];
                     $_SESSION['owner_id'] = $row['id'];
                     $_SESSION['user_type'] = $row['user_type'];
                     header('Location: body.php?pages=LND');

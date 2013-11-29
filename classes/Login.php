@@ -58,11 +58,7 @@
             socket_write($this->conn, $login_credentials, strlen($login_credentials));
             $server_reply =	$this->bufferToDisplay();
             $reply_json = json_decode( $server_reply );
-            if(isset($reply_json->user_email)){
-                $dbAccess= new DBAccess();
-                $dbAccess->createOrUpdateUser($userName,$pass,$reply_json->user_email,$reply_json->user_name);
-            }
-            //return $reply_json;
+            return $reply_json;
         }
         
 

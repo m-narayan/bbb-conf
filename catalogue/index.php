@@ -51,7 +51,7 @@
         $main_folder = $res9->result_set->main_folder;
         $sub_folder = $res9->result_set->sub_folder;
         $gfs_filename = $res9->result_set->gfs_filename;
-
+        echo $gfs_filename;
 
         $ftp_server = FTP_SERVER_IP;
         $ftp_user_name = FTP_USER_NAME;
