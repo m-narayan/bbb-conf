@@ -27,7 +27,7 @@
     <file path="/enroll.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385112473048" ignored="false" />
     <file path="/deenroll.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385113468637" ignored="false" />
     <file path="/enrolled_conference.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385448746722" ignored="false" />
-    <file path="/bbb-api.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385461432871" ignored="false" />
+    <file path="/bbb-api.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386064181165" ignored="false" />
     <file path="/validation.js" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385364571238" ignored="false" />
     <file path="/DBAccess.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386051508179" ignored="false" />
     <file path="/getJoinMeetingUrlAttendee.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385354074983" ignored="false" />
@@ -42,6 +42,7 @@
     <file path="$PROJECT_DIR$/../bbbapi/examples/getJoinMeetingUrlModerator.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385380903280" ignored="false" />
     <file path="$PROJECT_DIR$/../bbbapi/examples/isMeetingRunning.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385382671998" ignored="false" />
     <file path="/isMeetingRunning.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385446212034" ignored="false" />
+    <file path="/config.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386055558543" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +62,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="create_meeting.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="create_meeting.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_meeting.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="49" selection-start="4120" selection-end="4120" vertical-scroll-proportion="0.2112676">
+            <state line="95" column="49" selection-start="4120" selection-end="4120" vertical-scroll-proportion="-26.875">
               <folding />
             </state>
           </provider>
@@ -73,7 +74,16 @@
       <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="35" selection-start="150" selection-end="161" vertical-scroll-proportion="-3.75">
+            <state line="6" column="35" selection-start="150" selection-end="159" vertical-scroll-proportion="-3.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeftSideNew.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/main/LeftSideNew.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="10" selection-start="923" selection-end="923" vertical-scroll-proportion="-11.875">
               <folding />
             </state>
           </provider>
@@ -100,16 +110,16 @@
       <file leaf-file-name="Meeting.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/Meeting.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="27" selection-start="1353" selection-end="1353" vertical-scroll-proportion="-15.0">
+            <state line="182" column="42" selection-start="6949" selection-end="6949" vertical-scroll-proportion="-12.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bbb-api.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="bbb-api.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/bbb-api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="21" selection-start="2654" selection-end="2654" vertical-scroll-proportion="0.41666666">
+            <state line="72" column="54" selection-start="2867" selection-end="2867" vertical-scroll-proportion="0.47058824">
               <folding />
             </state>
           </provider>
@@ -119,15 +129,6 @@
         <entry file="file://$PROJECT_DIR$/classes/DBAccess.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="150" column="34" selection-start="6371" selection-end="6371" vertical-scroll-proportion="-11.583333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/catalogue/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="0" selection-start="1545" selection-end="1545" vertical-scroll-proportion="-11.875">
               <folding />
             </state>
           </provider>
@@ -193,22 +194,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/getRecordings.php" />
         <option value="$PROJECT_DIR$/settings.php" />
-        <option value="$PROJECT_DIR$/assets/main/LeftSideNew.php" />
         <option value="$PROJECT_DIR$/server.php" />
         <option value="$PROJECT_DIR$/editserver.php" />
         <option value="$PROJECT_DIR$/isMeetingRunning.php" />
         <option value="$PROJECT_DIR$/enrolled_conference.php" />
         <option value="$PROJECT_DIR$/getJoinMeetingUrlModerator.php" />
-        <option value="$PROJECT_DIR$/include/bbb-api.php" />
         <option value="$PROJECT_DIR$/classes/Login.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/catalogue/index.php" />
         <option value="$PROJECT_DIR$/classes/Catalogue.php" />
         <option value="$PROJECT_DIR$/classes/DBAccess.php" />
-        <option value="$PROJECT_DIR$/classes/Meeting.php" />
         <option value="$PROJECT_DIR$/create_meeting.php" />
+        <option value="$PROJECT_DIR$/include/config.php" />
+        <option value="$PROJECT_DIR$/classes/Meeting.php" />
+        <option value="$PROJECT_DIR$/assets/main/LeftSideNew.php" />
+        <option value="$PROJECT_DIR$/include/bbb-api.php" />
       </list>
     </option>
   </component>
@@ -400,7 +401,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="-8" width="1386" height="761" extended-state="6" />
+    <frame x="-10" y="-8" width="1386" height="761" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -485,11 +486,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="33" selection-start="3751" selection-end="3751" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/join_requests.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="54" selection-start="2016" selection-end="2016" vertical-scroll-proportion="0.0" />
@@ -589,30 +585,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/bbb-api.php">
+    <entry file="file://$PROJECT_DIR$/create_meeting.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="21" selection-start="2654" selection-end="2654" vertical-scroll-proportion="0.41666666">
+        <state line="95" column="49" selection-start="4120" selection-end="4120" vertical-scroll-proportion="-26.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/main/LeftSideNew.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="10" selection-start="923" selection-end="923" vertical-scroll-proportion="-11.875">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="35" selection-start="150" selection-end="161" vertical-scroll-proportion="-3.75">
+        <state line="6" column="35" selection-start="150" selection-end="159" vertical-scroll-proportion="-3.75">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Meeting.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="27" selection-start="1353" selection-end="1353" vertical-scroll-proportion="-15.0">
+        <state line="182" column="42" selection-start="6949" selection-end="6949" vertical-scroll-proportion="-12.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create_meeting.php">
+    <entry file="file://$PROJECT_DIR$/include/bbb-api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="49" selection-start="4120" selection-end="4120" vertical-scroll-proportion="0.2112676">
+        <state line="72" column="54" selection-start="2867" selection-end="2867" vertical-scroll-proportion="0.47058824">
           <folding />
         </state>
       </provider>

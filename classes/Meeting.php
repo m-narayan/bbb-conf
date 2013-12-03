@@ -40,7 +40,7 @@ class Meeting {
         if($_FILES['SMLD']['name']!='')
         {
 
-            $slide="http://10.1.10.252/SupUploads/".FTP_USER_NAME."/".$main_folder."/".$sub_folder."/".$gfs_filename;
+            $slide=BBB_PRESENTATION_URL.$main_folder."/".$sub_folder."/".$gfs_filename;
             $size=$_FILES['SMLD']['size'];
             $type=$_FILES['SMLD']['type'];
             if($size<=2000000)

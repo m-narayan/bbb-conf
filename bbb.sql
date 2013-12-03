@@ -77,7 +77,7 @@ CREATE TABLE `meetings` (
   UNIQUE KEY `index_bigbluebutton_rooms_on_meetingid` (`meetingid`),
   UNIQUE KEY `index_bigbluebutton_rooms_on_voice_bridge` (`voice_bridge`),
   KEY `index_bigbluebutton_rooms_on_server_id` (`server_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,7 +86,6 @@ CREATE TABLE `meetings` (
 
 LOCK TABLES `meetings` WRITE;
 /*!40000 ALTER TABLE `meetings` DISABLE KEYS */;
-INSERT INTO `meetings` VALUES (89,13,7,NULL,'529d847ebef7a','qweqw','529d840dcf967','529d840dcf9b6','qwewq',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',123,20131203,'wqewq','12321','active','08:10','http://10.1.10.252/SupUploads/s001/marketing_literature/batch1/0ac4b7ec-5be7-11e3-814c-0800275c1b87.pdf'),(90,13,7,NULL,'529d852b65524','qwewq','529d852915411','529d852915461','qweqwe',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',213,20131203,'qwewqe','qwewq','active','08:14','http://10.1.10.252/SupUploads/s001/marketing_literature/batch1/b38e6134-5be7-11e3-814c-0800275c1b87.pdf'),(91,13,7,NULL,'529d855691d10','qwrewq','529d85547ceb1','529d85547cefc','wqe4wq',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',123,20131203,'qwewq','231412','active','08:15','');
 /*!40000 ALTER TABLE `meetings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,7 +116,7 @@ CREATE TABLE `servers` (
 
 LOCK TABLES `servers` WRITE;
 /*!40000 ALTER TABLE `servers` DISABLE KEYS */;
-INSERT INTO `servers` VALUES (12,'Beacon BBB','http://106.187.45.141/bigbluebutton/','714f97ab3527c19648e201a729cd686f',NULL,NULL,NULL,NULL,0),(13,'Agora BBB','http://10.1.10.251/bigbluebutton/','d1d0bcb8412bafb6eaac811c2af2b6e2',NULL,NULL,NULL,NULL,1);
+INSERT INTO `servers` VALUES (13,'BBB','http://10.1.10.251/bigbluebutton/','d1d0bcb8412bafb6eaac811c2af2b6e2',NULL,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `servers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -183,4 +182,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-03 12:48:11
+-- Dump completed on 2013-12-03 13:05:23
