@@ -93,7 +93,7 @@
                             <input type="text" name="duration" onkeypress="return isNumberKey(event)" size="5" maxlength="3">
                         </td>
                     </tr>
-                    <tr><td>Presentation</td><td><input type="file" name="SMLD"  ></td></tr>
+                    <tr><td>Presentation(Max 2MB)</td><td><input type="file" name="SMLD"  ></td></tr>
                     <tr><td align="center" colspan="2">&nbsp;</td></tr>
                     <tr><td align="center" colspan="2"><input type="submit" name="submit" value="Save" class="Btn"></td></tr>
                 </table>

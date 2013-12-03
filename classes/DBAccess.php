@@ -141,15 +141,15 @@
             mysql_query($sql) or die(mysql_error());
         }
 
-        public function addMeeting($server_id,$attendeePw,$moderatorPw,$owner_id,$name,$welcome_msg,$meeting_date,$duration,$speaker,$topic) {
+        public function addMeeting($server_id,$attendeePw,$moderatorPw,$owner_id,$name,$welcome_msg,$meeting_date,$duration,$speaker,$topic,$slide) {
             $temp=$meeting_date;
             $temp=explode(" ",$temp);
             $meeting_date=$temp[0];
             $meeting_time=$temp[1];
             $date=explode("/",$meeting_date);
             $meeting_date=$date[2].$date[0].$date[1];
-            $sql="insert into meetings (server_id,owner_id,name,welcome_msg,record,meeting_date,meeting_time,duration,moderator_password,attendee_password,speaker,topic,status) ";
-            $sql=$sql." values(".$server_id.",".$owner_id.",'".$name."','".$welcome_msg."','true','".$meeting_date."','".$meeting_time."',".$duration.",'".$moderatorPw."','".$attendeePw."','".$speaker."','".$topic."','active')";
+            $sql="insert into meetings (slide,server_id,owner_id,name,welcome_msg,record,meeting_date,meeting_time,duration,moderator_password,attendee_password,speaker,topic,status) ";
+            $sql=$sql." values('".$slide."',".$server_id.",".$owner_id.",'".$name."','".$welcome_msg."','true','".$meeting_date."','".$meeting_time."',".$duration.",'".$moderatorPw."','".$attendeePw."','".$speaker."','".$topic."','active')";
             mysql_query($sql);
 
             $sql = "select max(id) as max from meetings";

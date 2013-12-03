@@ -36,7 +36,6 @@ CREATE TABLE `invitations` (
 
 LOCK TABLES `invitations` WRITE;
 /*!40000 ALTER TABLE `invitations` DISABLE KEYS */;
-INSERT INTO `invitations` VALUES (23,78,1),(24,82,1);
 /*!40000 ALTER TABLE `invitations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,11 +72,12 @@ CREATE TABLE `meetings` (
   `topic` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `status` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `meeting_time` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `slide` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_bigbluebutton_rooms_on_meetingid` (`meetingid`),
   UNIQUE KEY `index_bigbluebutton_rooms_on_voice_bridge` (`voice_bridge`),
   KEY `index_bigbluebutton_rooms_on_server_id` (`server_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,7 +86,7 @@ CREATE TABLE `meetings` (
 
 LOCK TABLES `meetings` WRITE;
 /*!40000 ALTER TABLE `meetings` DISABLE KEYS */;
-INSERT INTO `meetings` VALUES (78,12,7,NULL,'529491e24e71b','test1','52947e273a0af','52947e273a0f7','test1',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',111,20131126,'test1','test1','active','11:55'),(79,12,7,NULL,'5294859f58a01','test2','5294846cdfc01','5294846cdfc61','test2',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',333,20131126,'test2','test2','active','11:55'),(80,12,7,NULL,'529485af10081','werew','529485ade2ade','529485ade2b23','ewrwe',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',32,20131126,'ewrew','ewrew','active','12:27'),(81,12,7,NULL,NULL,'fdgd','52948f1a6a7d7','52948f1a6a81f','fdgfd',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',324,20131126,'fdgfd','fdgfd','active','13:07'),(82,13,7,NULL,'52949d10e4fec','aaa','5294928669242','5294928669288','aaa',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',21,20131126,'aaa','aaa','active','13:22');
+INSERT INTO `meetings` VALUES (89,13,7,NULL,'529d847ebef7a','qweqw','529d840dcf967','529d840dcf9b6','qwewq',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',123,20131203,'wqewq','12321','active','08:10','http://10.1.10.252/SupUploads/s001/marketing_literature/batch1/0ac4b7ec-5be7-11e3-814c-0800275c1b87.pdf'),(90,13,7,NULL,'529d852b65524','qwewq','529d852915411','529d852915461','qweqwe',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',213,20131203,'qwewqe','qwewq','active','08:14','http://10.1.10.252/SupUploads/s001/marketing_literature/batch1/b38e6134-5be7-11e3-814c-0800275c1b87.pdf'),(91,13,7,NULL,'529d855691d10','qwrewq','529d85547ceb1','529d85547cefc','wqe4wq',NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,'true',123,20131203,'qwewq','231412','active','08:15','');
 /*!40000 ALTER TABLE `meetings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -183,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-29 11:46:49
+-- Dump completed on 2013-12-03 12:48:11

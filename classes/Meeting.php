@@ -24,10 +24,11 @@ class Meeting {
         $result = $catalogue->connection();
         $result = $catalogue->authenticateUser($_SESSION['name'] ,$_SESSION['password'] );
         $filName = $_FILES['SMLD']['name'];
+        $slide="";
         $doc_name = $filName;
         $dt_id = 'SMLD';
         $res9 = $catalogue->CreateGFSSupplierDocFileID($doc_name,$dt_id);
-        print_r($res9);
+
         $main_folder = $res9->result_set->main_folder;
         $sub_folder = $res9->result_set->sub_folder;
         $gfs_filename = $res9->result_set->gfs_filename;
@@ -39,6 +40,7 @@ class Meeting {
         if($_FILES['SMLD']['name']!='')
         {
 
+            $slide="http://10.1.10.252/SupUploads/".FTP_USER_NAME."/".$main_folder."/".$sub_folder."/".$gfs_filename;
             $size=$_FILES['SMLD']['size'];
             $type=$_FILES['SMLD']['type'];
             if($size<=2000000)
@@ -74,13 +76,14 @@ class Meeting {
                     $file = $temp_name ;
                     $remote_file = $filen;
 
-                    $ret = ftp_nb_put($conn_id, $remote_file, $file, FTP_BINARY, FTP_AUTORESUME);
+                    $ret = ftp_nb_put($conn_id, $gfs_filename, $file, FTP_BINARY, FTP_AUTORESUME);
+                    //$ret = ftp_nb_put($conn_id, $remote_file, $file, FTP_BINARY, FTP_AUTORESUME);
                     while(FTP_MOREDATA == $ret) {
                         $ret = ftp_nb_continue($conn_id);
                     }
 
                     if($ret == FTP_FINISHED) {
-                       echo "File '" . $remote_file . "' uploaded successfully.";
+                      // echo "File '" . $remote_file . "' uploaded successfully.";
                     } else {
                         echo "Failed uploading file '" . $remote_file . "'.";
                     }
@@ -91,7 +94,6 @@ class Meeting {
             }
 
         }
-        die;
 
         $attendeePw=uniqid();
         $moderatorPw=uniqid();
@@ -101,7 +103,7 @@ class Meeting {
         $server_id=$row['id'];
 
 
-        $dbAccess->addMeeting($server_id,$attendeePw,$moderatorPw,$owner_id,$name,$welcome_msg,$meeting_date,$duration,$speaker,$topic);
+        $dbAccess->addMeeting($server_id,$attendeePw,$moderatorPw,$owner_id,$name,$welcome_msg,$meeting_date,$duration,$speaker,$topic,$slide);
 
     }
 
@@ -168,10 +170,14 @@ class Meeting {
             //'meta_category' => '',	// Use to pass additional info to BBB server. See API docs.
         );
 
-        $preUploadXML = "<?xml version='1.0' encoding='UTF-8'?>";
-        $preUploadXML=$preUploadXML."<modules><module name=\"presentation\">";
-        $preUploadXML=$preUploadXML."<document url=\"http://106.187.45.141/sample.pdf\" />";
-        $preUploadXML=$preUploadXML."</module></modules>";
+        if($row['slide']!=""){
+            $preUploadXML = "<?xml version='1.0' encoding='UTF-8'?>";
+            $preUploadXML=$preUploadXML."<modules><module name=\"presentation\">";
+            $preUploadXML=$preUploadXML."<document url=\"".$row['slide']."\" />";
+            $preUploadXML=$preUploadXML."</module></modules>";
+        }else{
+            $preUploadXML="";
+        }
 
         $itsAllGood = true;
         try {$result = $bbb->createMeetingWithXmlResponseArray($creationParams,$preUploadXML);}
