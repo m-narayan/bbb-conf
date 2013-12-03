@@ -30,6 +30,7 @@ function server(){
 }
 
 function meeting(id){
+    extension=document.frm.SMLD.value.split('.').pop().toUpperCase();
     if(trim1(document.frm.name.value)==""){
         alert("Please enter Name");
         document.frm.name.focus();
@@ -49,6 +50,10 @@ function meeting(id){
     }else if(trim1(document.frm.duration.value)==""){
         alert("Please enter duration");
         document.frm.duration.focus();
+        return false;
+    }else if(extension!="" && ((extension!="PDF") && (extension!="PPT"))){
+        alert("Invalid Presentation. Only PDF and PPT");
+        document.frm.SMLD.focus();
         return false;
     }else{
         response="";

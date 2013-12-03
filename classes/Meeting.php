@@ -20,6 +20,7 @@ class Meeting {
 
 
     public function addMeeting($owner_id,$name,$welcome_msg,$meeting_date,$duration,$speaker,$topic) {
+        $_SESSION['error']="";
         $catalogue = new Catalogue();
         $result = $catalogue->connection();
         $result = $catalogue->authenticateUser($_SESSION['name'] ,$_SESSION['password'] );
@@ -47,10 +48,6 @@ class Meeting {
             {
                 $file=$_FILES['SMLD']['name'];
                 $temp_name=$_FILES['SMLD']['tmp_name'];
-                //$path=$_SERVER['DOCUMENT_ROOT']."/Proclaim/supTCP4/Temp/".$file ;
-                //$path=$_SERVER['DOCUMENT_ROOT']."/bbb/Supplies/supTCP4/Temp/".$file ;
-
-                //move_uploaded_file($temp_name,$path);
 
                 $conn_id = ftp_connect($ftp_server);
                 $login_result = @ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
@@ -91,19 +88,19 @@ class Meeting {
                     echo "Cannot connect to FTP server at " . $ftp_server;
                 }
 
+                $attendeePw=uniqid();
+                $moderatorPw=uniqid();
+
+                $dbAccess = new DBAccess();
+                $row=$dbAccess->getRandomServer();
+                $server_id=$row['id'];
+                $dbAccess->addMeeting($server_id,$attendeePw,$moderatorPw,$owner_id,$name,$welcome_msg,$meeting_date,$duration,$speaker,$topic,$slide);
+            }else{
+                $_SESSION['error']="Maximum upload size is 2MB";
             }
 
         }
 
-        $attendeePw=uniqid();
-        $moderatorPw=uniqid();
-
-        $dbAccess = new DBAccess();
-        $row=$dbAccess->getRandomServer();
-        $server_id=$row['id'];
-
-
-        $dbAccess->addMeeting($server_id,$attendeePw,$moderatorPw,$owner_id,$name,$welcome_msg,$meeting_date,$duration,$speaker,$topic,$slide);
 
     }
 
