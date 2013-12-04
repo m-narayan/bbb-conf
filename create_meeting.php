@@ -120,6 +120,7 @@
             </ul>
             <div class="tabcontents">
                 <div id="view1">
+                    <h3 style="text-align: center;">Today's Conference</h3>
                     <table align="center" class="rightform" border="1">
                         <tr><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th><th>Start</th><th>Recordings</th></tr>
                         <?php
@@ -142,6 +143,7 @@
 
                 </div>
                 <div id="view2">
+                    <h3 style="text-align: center;">Future Conference</h3>
                     <table align="center" class="rightform" border="1">
                         <tr><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th></tr>
                         <?php
@@ -162,6 +164,7 @@
 
                 </div>
                 <div id="view3">
+                    <h3 style="text-align: center;">Old Conference</h3>
                     <table align="center" class="rightform" border="1">
                         <tr><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th><th>Recordings</th></tr>
                         <?php
