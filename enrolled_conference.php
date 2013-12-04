@@ -25,6 +25,7 @@
         <title>Conference</title>
         <!--     Cascading Style Sheet --> 
         <link rel="stylesheet" type="text/css" href="css/Style.css"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" /
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
         <link rel="stylesheet" type="text/css" href="css/jquery.alerts.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="css/rhd.css"/>  
@@ -50,7 +51,7 @@
             <br>
             <h3 style="text-align: center;">Enrolled Conference</h3>
             <table align="center" class="rightform" border="1">
-            <tr><th>User</th><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>DeEnroll</th><th>Join</th></tr>
+            <tr><th>User</th><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>DeEnroll</th><th>Join</th><th>Recordings</th></tr>
             <?php
                 $meeting=new Meeting();
                 while($row=mysql_fetch_array($result)){
@@ -61,7 +62,7 @@
                     echo "<td>".$row['speaker']."</td>";
                     echo "<td>".$row['topic']."</td>";
                     echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
-                    echo "<td>".$row['duration']."</td>";
+                    echo "<td style='text-align: right'>".$row['duration']."</td>";
                     echo "<td><a href='deenroll.php?meeting_id=".$row['id']."'>DeEnroll</a></td>";
                     $status=$meeting->isMeetingRunning($row['id']);
                     if($status=="true"){
@@ -69,6 +70,7 @@
                     }else{
                         echo "<td>Not Running</td>";
                     }
+                    echo "<td><a target='_blank' href='getRecordings.php?id=".$row['id']."'>View</a></td>";
                     echo "</tr>";
                 }
             ?>

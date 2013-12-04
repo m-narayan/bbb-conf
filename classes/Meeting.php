@@ -88,18 +88,19 @@ class Meeting {
                     echo "Cannot connect to FTP server at " . $ftp_server;
                 }
 
-                $attendeePw=uniqid();
-                $moderatorPw=uniqid();
-
-                $dbAccess = new DBAccess();
-                $row=$dbAccess->getRandomServer();
-                $server_id=$row['id'];
-                $dbAccess->addMeeting($server_id,$attendeePw,$moderatorPw,$owner_id,$name,$welcome_msg,$meeting_date,$duration,$speaker,$topic,$slide);
             }else{
                 $_SESSION['error']="Maximum upload size is 2MB";
             }
-
         }
+
+        $attendeePw=uniqid();
+        $moderatorPw=uniqid();
+
+        $dbAccess = new DBAccess();
+        $row=$dbAccess->getRandomServer();
+        $server_id=$row['id'];
+        $dbAccess->addMeeting($server_id,$attendeePw,$moderatorPw,$owner_id,$name,$welcome_msg,$meeting_date,$duration,$speaker,$topic,$slide);
+
 
 
     }

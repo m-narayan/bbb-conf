@@ -23,9 +23,11 @@
         <title>Conference</title>
         <!--     Cascading Style Sheet --> 
         <link rel="stylesheet" type="text/css" href="css/Style.css"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" /
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
         <link rel="stylesheet" type="text/css" href="css/jquery.alerts.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="css/rhd.css"/>  
+        <link rel="stylesheet" type="text/css" href="css/rhd.css"/>
+
 
 
     </head>
@@ -57,8 +59,8 @@
                     echo "<td>".$row['welcome_msg']."</td>";
                     echo "<td>".$row['speaker']."</td>";
                     echo "<td>".$row['topic']."</td>";
-                    echo "<td>".$row['meeting_date']."</td>";
-                    echo "<td>".$row['duration']."</td>";
+                    echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
+                    echo "<td style='text-align: right'>".$row['duration']."</td>";
 //                    if($meeting->checkEnrollment($row['id'],$_SESSION['owner_id'])){
 //                        echo "<td><a href='deenroll.php?meeting_id=".$row['id']."'>DeEnroll</a></td>";
 //                    }else{

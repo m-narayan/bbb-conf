@@ -56,8 +56,8 @@
             return(mysql_query($sql));
         }
 
-        public function checkUser($login,$pass){
-            $sql="select * from users where login='".$login."' and password='".$pass."'";
+        public function checkUser($login,$pass,$userType){
+            $sql="select * from users where login='".$login."' and password='".$pass."' and user_type='".$userType."'";
             $result=mysql_query($sql);
             $count=mysql_num_rows($result);
             return $count;
@@ -70,7 +70,7 @@
             return $row;
         }
 
-        public function createOrUpdateUser($login,$password,$email,$full_name){
+        public function createOrUpdateUser($login,$password,$email,$full_name,$user_type){
             $sql="select * from users where login='".$login."'";
             $result=mysql_query($sql);
             $count=mysql_num_rows($result);
@@ -78,10 +78,11 @@
             $pos=strpos($full_name,'.');
             $full_name=substr($full_name,$pos+2,strlen($full_name));
             $full_name=str_replace(',', '', $full_name);
+            $user_type=strtolower($user_type);
             if($count==1){
-                $sql="update users set email='".$email."',password='".$password."',full_name='".$full_name."' where login='".$login."'";
+                $sql="update users set email='".$email."',password='".$password."',full_name='".$full_name."',user_type='".$user_type."' where login='".$login."'";
             }else{
-                $sql="insert into users (login,password,email,full_name) values ('".$login."','".$password."','".$email->user_email."','".$full_name."')";
+                $sql="insert into users (login,password,email,full_name,user_type) values ('".$login."','".$password."','".$email."','".$full_name."','".$user_type."')";
             }
             mysql_query($sql);
         }
@@ -173,7 +174,22 @@
         }
 
         public function getAllMeetings($owner_id){
-            $sql="select * from meetings where owner_id=".$owner_id;
+            $sql="select * from meetings where owner_id=".$owner_id." order by meeting_date desc";
+            return(mysql_query($sql));
+        }
+
+        public function getTodayMeetings($owner_id){
+            $sql="select * from meetings where owner_id=".$owner_id." and meeting_date=".date("Ymd")." order by meeting_date desc";
+            return(mysql_query($sql));
+        }
+
+        public function getPastMeetings($owner_id){
+            $sql="select * from meetings where owner_id=".$owner_id." and meeting_date<".date("Ymd")." order by meeting_date desc";
+            return(mysql_query($sql));
+        }
+
+        public function getFutureMeetings($owner_id){
+            $sql="select * from meetings where owner_id=".$owner_id." and meeting_date>".date("Ymd")." order by meeting_date desc";
             return(mysql_query($sql));
         }
 

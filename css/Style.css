@@ -35,7 +35,7 @@
 
 
 #content{
-    height: 520px;
+    min-height: 520px;
     border-style: solid;
     /*border-width: thin;   */
     border-color: #BBBBBB;
@@ -208,7 +208,7 @@
 }
 
 #rightform{
-    height: 520px;
+    min-height: 520px;
     color:#000;
     background-color: #fff;
     text-align: center;

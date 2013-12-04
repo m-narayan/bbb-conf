@@ -5,7 +5,9 @@
     require_once('include/bbb-api.php');
     require_once('classes/Meeting.php');
     require_once('classes/DBAccess.php');
-    require_once('classes/Login.php');
+    include 'include/config.php';
+    include 'include/config_supplier.php';
+    require_once('classes/supplierLogin.php');
     require_once('classes/Catalogue.php');
 
 
@@ -25,7 +27,7 @@
 //        }
     }
 
-    $result=$dbAccess->getAllMeetings($_SESSION['owner_id']);
+
 
 ?>
 
@@ -37,12 +39,16 @@
         <title>Conference</title>
         <!--     Cascading Style Sheet --> 
         <link rel="stylesheet" type="text/css" href="css/Style.css"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" /
         <link rel="stylesheet" type="text/css" href="css/rhd.css"/>
         <link type="text/css" rel="stylesheet" href="css/calendar.css?random=20051112" media="screen"></LINK>
+        <link href="tabcontent/tabcontent.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="js/validation.js"></script>
 
         <SCRIPT type="text/javascript" src="js/calendar.js?random=20060118"></script>
 
+
+        <script src="tabcontent/tabcontent.js" type="text/javascript"></script>
 
 
     </head>
@@ -106,29 +112,78 @@
                 </table>
             </form>
             <br>
-            <table align="center" class="rightform" border="1">
-            <tr><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>Start</th></tr>
-            <?php
-                while($row=mysql_fetch_array($result)){
-                    echo "<tr>";
-                    //echo "<td>".$row['meetingid']."</td>";
-                    echo "<td>".$row['name']."</td>";
-                    echo "<td>".$row['welcome_msg']."</td>";
-                    echo "<td>".$row['speaker']."</td>";
-                    echo "<td>".$row['topic']."</td>";
-                    echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
-                    echo "<td>".$row['duration']."</td>";
-                    if($row['meeting_date']==date("Ymd"))
-                        echo "<td><a target='_blank' href='getJoinMeetingUrlModerator.php?id=".$row['id']."'>Start Conference</a></td>";
-                    else
-                        echo "<td>&nbsp;</td>";
-                    echo "</tr>";
-                }
-            ?>
-            </table>
-            <?php
-                //print_r($response);
-            ?>
+
+            <ul class="tabs">
+                <li><a href="#view1">Today's Conference</a></li>
+                <li><a href="#view2">Future Conference</a></li>
+                <li><a href="#view3">Old Conference</a></li>
+            </ul>
+            <div class="tabcontents">
+                <div id="view1">
+                    <table align="center" class="rightform" border="1">
+                        <tr><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th><th>Start</th><th>Recordings</th></tr>
+                        <?php
+                        $result=$dbAccess->getTodayMeetings($_SESSION['owner_id']);
+                        while($row=mysql_fetch_array($result)){
+                            echo "<tr>";
+                            //echo "<td>".$row['meetingid']."</td>";
+                            echo "<td>".$row['name']."</td>";
+                            echo "<td>".$row['welcome_msg']."</td>";
+                            echo "<td>".$row['speaker']."</td>";
+                            echo "<td>".$row['topic']."</td>";
+                            echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
+                            echo "<td style='text-align: right'>".$row['duration']."</td>";
+                            echo "<td><a target='_blank' href='getJoinMeetingUrlModerator.php?id=".$row['id']."'>Start Conference</a></td>";
+                            echo "<td><a target='_blank' href='getRecordings.php?id=".$row['id']."'>View</a></td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </table>
+
+                </div>
+                <div id="view2">
+                    <table align="center" class="rightform" border="1">
+                        <tr><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th></tr>
+                        <?php
+                        $result=$dbAccess->getFutureMeetings($_SESSION['owner_id']);
+                        while($row=mysql_fetch_array($result)){
+                            echo "<tr>";
+                            //echo "<td>".$row['meetingid']."</td>";
+                            echo "<td>".$row['name']."</td>";
+                            echo "<td>".$row['welcome_msg']."</td>";
+                            echo "<td>".$row['speaker']."</td>";
+                            echo "<td>".$row['topic']."</td>";
+                            echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
+                            echo "<td style='text-align: right'>".$row['duration']."</td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </table>
+
+                </div>
+                <div id="view3">
+                    <table align="center" class="rightform" border="1">
+                        <tr><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th><th>Recordings</th></tr>
+                        <?php
+                        $result=$dbAccess->getPastMeetings($_SESSION['owner_id']);
+                        while($row=mysql_fetch_array($result)){
+                            echo "<tr>";
+                            //echo "<td>".$row['meetingid']."</td>";
+                            echo "<td>".$row['name']."</td>";
+                            echo "<td>".$row['welcome_msg']."</td>";
+                            echo "<td>".$row['speaker']."</td>";
+                            echo "<td>".$row['topic']."</td>";
+                            echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
+                            echo "<td style='text-align: right'>".$row['duration']."</td>";
+                            echo "<td><a target='_blank' href='getRecordings.php?id=".$row['id']."'>View</a></td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </table>
+
+                </div>
+            </div>
+
         </div>
         <?php include_once 'assets/main/FooterNew.php'; ?>
         <form name="refreshForm">
