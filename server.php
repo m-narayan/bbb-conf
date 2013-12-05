@@ -82,7 +82,8 @@
                     echo "<td><a href='editserver.php?id=".$row['id']."'>Edit</a></td>";
                     echo "<td>";
                     if(!$dbAccess->checkServerInUse($row['id'])){
-                        echo "<a href='deleteserver.php?id=".$row['id']."'>Delete</a>";
+                        //echo "<a href='deleteserver.php?id=".$row['id']."'>Delete</a>";
+                        echo "<a href='#' onclick='deleteConfirm(".$row['id'].")' >Delete</a>";
                     }else{
                         echo "In Use";
                     }

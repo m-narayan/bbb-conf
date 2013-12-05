@@ -4,7 +4,6 @@
     require_once('classes/Authorization.php');
     require_once('include/bbb-api.php');
     require_once('classes/DBAccess.php');
-    require_once('classes/Meeting.php');
 
     $auth_right = new Authorization();
     if(!$auth_right->checkAccessRight()) {
@@ -12,7 +11,7 @@
     }
 
     $dbAccess= new DBAccess();
-    $result=$dbAccess->enrolledConferences($_SESSION['owner_id']);
+    $result=$dbAccess->getInvitations($_SESSION['owner_id']);
 
 ?>
 
@@ -20,15 +19,15 @@
 
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="refresh" content="60" />
+        <meta charset="utf-8" /> 
         <title>Conference</title>
         <!--     Cascading Style Sheet --> 
         <link rel="stylesheet" type="text/css" href="css/Style.css"/>
         <link rel="icon" href="favicon.ico" type="image/x-icon" /
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
         <link rel="stylesheet" type="text/css" href="css/jquery.alerts.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="css/rhd.css"/>  
+        <link rel="stylesheet" type="text/css" href="css/rhd.css"/>
+
 
 
     </head>
@@ -49,11 +48,10 @@
         <?php include_once 'assets/main/LeftSideNew.php'; ?>
         <div id="rightform">
             <br>
-            <h3 style="text-align: center;">Enrolled Conference</h3>
+            <h3 style="text-align: center;">Invitations</h3>
             <table align="center" class="rightform" border="1">
-            <tr><th>User</th><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>DeEnroll</th><th>Join</th><th>Recordings</th></tr>
+            <tr><th>User</th><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>Action</th></tr>
             <?php
-                $meeting=new Meeting();
                 while($row=mysql_fetch_array($result)){
                     echo "<tr>";
                     echo "<td>".$row['full_name']."</td>";
@@ -63,14 +61,12 @@
                     echo "<td>".$row['topic']."</td>";
                     echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
                     echo "<td style='text-align: right'>".$row['duration']."</td>";
-                    echo "<td><a href='deenroll.php?meeting_id=".$row['id']."'>DeEnroll</a></td>";
-                    $status=$meeting->isMeetingRunning($row['id']);
-                    if($status=="true"){
-                        echo "<td><a target='_blank' href='getJoinMeetingUrlAttendee.php?id=".$row['id']."'>Join</a></td>";
-                    }else{
-                        echo "<td>Not Running</td>";
-                    }
-                    echo "<td><a target='_blank' href='getRecordings.php?id=".$row['id']."'>View</a></td>";
+//                    if($meeting->checkEnrollment($row['id'],$_SESSION['owner_id'])){
+//                        echo "<td><a href='deenroll.php?meeting_id=".$row['id']."'>DeEnroll</a></td>";
+//                    }else{
+                        echo "<td><a href='enroll.php?meeting_id=".$row['id']."'>Enroll</a></td>";
+//                    }
+
                     echo "</tr>";
                 }
             ?>

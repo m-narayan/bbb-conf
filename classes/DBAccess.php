@@ -126,7 +126,7 @@
             $sql="select * from meetings where server_id=".$id;
             $result=mysql_query($sql);
             $count=mysql_num_rows($result);
-            if($count==1) $flag=true;
+            if($count>=1) $flag=true;
             return $flag;
         }
 
@@ -150,7 +150,7 @@
             $date=explode("/",$meeting_date);
             $meeting_date=$date[2].$date[0].$date[1];
             $sql="insert into meetings (slide,server_id,owner_id,name,welcome_msg,record,meeting_date,meeting_time,duration,moderator_password,attendee_password,speaker,topic,status) ";
-            $sql=$sql." values('".$slide."',".$server_id.",".$owner_id.",'".$name."','".$welcome_msg."','true','".$meeting_date."','".$meeting_time."',".$duration.",'".$moderatorPw."','".$attendeePw."','".$speaker."','".$topic."','active')";
+            $sql=$sql." values('".$slide."',".$server_id.",".$owner_id.",'".$name."','".$welcome_msg."','true','".$meeting_date."','".$meeting_time."',".$duration.",'".$moderatorPw."','".$attendeePw."','".$speaker."','".$topic."','reject')";
             mysql_query($sql);
 
             $sql = "select max(id) as max from meetings";
@@ -159,7 +159,18 @@
             return($row['max']);
         }
 
+        public function broadcast($meeting_id,$users){
+            $sql="delete from broadcast where meeting_id=".$meeting_id;
+            mysql_query($sql);
+            foreach($users as $user_id){
+                $sql="insert into broadcast (meeting_id,user_id) values(".$meeting_id.",".$user_id.")";
+                mysql_query($sql);
+            }
+        }
+
         public function addInvitations($meeting_id,$users){
+            $sql="delete from invitations where meeting_id=".$meeting_id;
+            mysql_query($sql);
             foreach($users as $user_id){
                 $sql="insert into invitations (meeting_id,user_id) values(".$meeting_id.",".$user_id.")";
                 mysql_query($sql);
@@ -168,6 +179,13 @@
 
         public function getMeeting($id){
             $sql="select * from meetings where id=".$id;
+            $result=mysql_query($sql);
+            $row=mysql_fetch_array($result);
+            return($row);
+        }
+
+        public function getMeetingDetail($id){
+            $sql="select a.*,b.full_name from meetings a,users b where a.owner_id=b.id and a.id=".$id;
             $result=mysql_query($sql);
             $row=mysql_fetch_array($result);
             return($row);
@@ -193,15 +211,37 @@
             return(mysql_query($sql));
         }
 
+        public function getAllConferences(){
+            $sql="select a.*,b.full_name from meetings a,users b where a.owner_id=b.id";
+            $sql=$sql." and a.meeting_date>=".date("Ymd")." order by meeting_date";
+            return(mysql_query($sql));
+        }
+
+        public function getInvitations($owner_id){
+            $sql="select a.*,b.full_name from meetings a,users b where a.status='accept' and a.owner_id=b.id and owner_id<>".$owner_id;
+            $sql=$sql." and a.id  in (select meeting_id from broadcast where user_id=".$owner_id.")";
+            return(mysql_query($sql));
+        }
+
         public function getJoinRequests($owner_id){
-            $sql="select a.*,b.full_name from meetings a,users b where a.status='active' and a.owner_id=b.id and owner_id<>".$owner_id;
+            $sql="select a.*,b.full_name from meetings a,users b where a.status='accept' and a.owner_id=b.id and owner_id<>".$owner_id;
             $sql=$sql." and a.id not in (select meeting_id from invitations where user_id=".$owner_id.")";
             return(mysql_query($sql));
         }
 
         public function getAllUsers($owner_id){
-            $sql="select * from users where id<>".$owner_id;
+            $sql="select * from users where id<>".$owner_id." and id<>1 order by full_name";
             return(mysql_query($sql));
+        }
+
+        public function accept($meeting_id){
+            $sql="update meetings set status='accept' where id =".$meeting_id;
+            mysql_query($sql);
+        }
+
+        public function reject($meeting_id){
+            $sql="update meetings set status='reject' where id =".$meeting_id;
+            mysql_query($sql);
         }
 
         public function enroll($meeting_id,$user_id){
@@ -220,6 +260,15 @@
         }
 
 
+        public function getBroadcast($meeting_id,$user_id){
+            $flag=false;
+            $sql="select * from broadcast where meeting_id=".$meeting_id." and user_id=".$user_id;
+            $result=mysql_query($sql);
+            $count=mysql_num_rows($result);
+            if($count>=1) $flag=true;
+            return($flag);
+        }
+
         public function checkEnrollment($meeting_id,$user_id){
             $flag=false;
             $sql="select * from invitations where meeting_id=".$meeting_id." and user_id=".$user_id;
@@ -227,6 +276,20 @@
             $count=mysql_num_rows($result);
             if($count>=1) $flag=true;
             return($flag);
+        }
+
+        public function checkOldPassword($pass){
+            $flag=false;
+            $sql="select * from users where password='".$pass."' and id=1";
+            $result=mysql_query($sql);
+            $count=mysql_num_rows($result);
+            if($count>=1) $flag=true;
+            return($flag);
+        }
+
+        public function changePassword($pass){
+            $sql="update users set password='".$pass."' where id=1";
+            mysql_query($sql);
         }
 
     }

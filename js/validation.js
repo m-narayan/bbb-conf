@@ -1,3 +1,41 @@
+function change_password(){
+    if(trim1(document.frm.old_pass.value)==""){
+        alert("Please enter old password");
+        document.frm.old_pass.focus();
+        return false;
+    }else if(trim1(document.frm.new_pass.value)==""){
+        alert("Please enter new password");
+        document.frm.new_pass.focus();
+        return false;
+    }else if(trim1(document.frm.conf_pass.value)==""){
+        alert("Please confirm new password");
+        document.frm.conf_pass.focus();
+        return false;
+    }else if(trim1(document.frm.new_pass.value) != trim1(document.frm.conf_pass.value)){
+        alert("Passwords does not match");
+        document.frm.conf_pass.focus();
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function deleteConfirm(id){
+    var result = confirm("Are you sure?");
+    if (result==true) {
+        window.location.href="deleteserver.php?id="+id;
+    }
+}
+
+function fileSelectedChanged() {
+    var filePath = document.frm.SMLD.value;
+    var ext = filePath.substring(filePath.lastIndexOf('.') + 1).toLowerCase();
+    if(ext != 'pdf' && ext != 'ppt') {
+        document.frm.SMLD.value="";
+        alert('Only pdf and ppt are allowed');
+    }
+}
+
 function trim1(str) {
     return str.replace(/^\s+|\s+$/g,"");
 }

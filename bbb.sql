@@ -16,6 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `broadcast`
+--
+
+DROP TABLE IF EXISTS `broadcast`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `broadcast` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `meeting_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `broadcast`
+--
+
+LOCK TABLES `broadcast` WRITE;
+/*!40000 ALTER TABLE `broadcast` DISABLE KEYS */;
+/*!40000 ALTER TABLE `broadcast` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `invitations`
 --
 
@@ -27,7 +51,7 @@ CREATE TABLE `invitations` (
   `meeting_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,7 +79,7 @@ CREATE TABLE `meetings` (
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `attendee_password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `moderator_password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `welcome_msg` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `welcome_msg` text COLLATE utf8_unicode_ci,
   `logout_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `voice_bridge` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `dial_number` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -77,7 +101,7 @@ CREATE TABLE `meetings` (
   UNIQUE KEY `index_bigbluebutton_rooms_on_meetingid` (`meetingid`),
   UNIQUE KEY `index_bigbluebutton_rooms_on_voice_bridge` (`voice_bridge`),
   KEY `index_bigbluebutton_rooms_on_server_id` (`server_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=153 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,7 +131,7 @@ CREATE TABLE `servers` (
   `param` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `status` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +157,7 @@ CREATE TABLE `user_settings` (
   `max_conference` int(11) DEFAULT NULL,
   `period` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,6 +166,7 @@ CREATE TABLE `user_settings` (
 
 LOCK TABLES `user_settings` WRITE;
 /*!40000 ALTER TABLE `user_settings` DISABLE KEYS */;
+INSERT INTO `user_settings` VALUES (1,7,121,0);
 /*!40000 ALTER TABLE `user_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,4 +207,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-04 18:08:31
+-- Dump completed on 2013-12-05 16:36:32

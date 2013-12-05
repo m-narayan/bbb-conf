@@ -16,3 +16,4 @@ $url=$result[0]['playbackFormatUrl'];
 header("location: $url");
 
 ?>
+

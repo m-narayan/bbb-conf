@@ -22,9 +22,6 @@
 
     if(isset($_POST['submit'])){
         $meeting_id=$meeting->addMeeting($_SESSION['owner_id'],$_POST['name'],$_POST['welcome_msg'],$_POST['meeting_date'],$_POST['duration'],$_POST['speaker'],$_POST['topic']);
-//        if(isset($_POST['invitation_list'])){
-//            $meeting->addInvitations($meeting_id,$_POST['invitation_list']);
-//        }
     }
 
 
@@ -44,12 +41,20 @@
         <link type="text/css" rel="stylesheet" href="css/calendar.css?random=20051112" media="screen"></LINK>
         <link href="tabcontent/tabcontent.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="js/validation.js"></script>
+        <script type="text/javascript" src="js/basic.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.simplemodal.js"></script>
 
         <SCRIPT type="text/javascript" src="js/calendar.js?random=20060118"></script>
 
 
         <script src="tabcontent/tabcontent.js" type="text/javascript"></script>
-
+        <script>
+            function openRecording(id){
+                var winFeature ='location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes';
+                window.open('<?php echo $url; ?>','null',winFeature);
+            }
+        </script>
 
     </head>
     <?php
@@ -75,21 +80,13 @@
             <form method="post" enctype="multipart/form-data" action="" name="frm" onsubmit="return meeting('<?php echo $_SESSION['owner_id']; ?>');">
                 <table align="center" class="rightform">
                     <tr><td>Name</td><td><input type="text" name="name"  size="40" maxlength="250"></td></tr>
-                    <tr><td>Welcome Message</td><td><input type="text" name="welcome_msg"  size="40" maxlength="250"></td></tr>
+                    <tr><td>Welcome Message</td>
+                        <td>
+                            <textarea rows="5" cols="39" name="welcome_msg" ></textarea>
+                        </td>
+                    </tr>
                     <tr><td>Speaker</td><td><input type="text" name="speaker"  size="40" maxlength="250"></td></tr>
                     <tr><td>Topic</td><td><input type="text" name="topic"  size="40" maxlength="250"></td></tr>
-<!--                    <tr><td>Invitation List</td>-->
-<!--                        <td>-->
-<!--                            <div style="height:100px;overflow-y: scroll">-->
-<!--                            --><?php
-//                            $users=$meeting->getAllUsers($_SESSION['owner_id']);
-//                            while($row=mysql_fetch_array($users)){
-//                                echo "<input type='checkbox' name='invitation_list[]' value='".$row['id']."' >".$row['full_name']."<br>";
-//                            }
-//                            ?>
-<!--                            </div>-->
-<!--                        </td>-->
-<!--                    </tr>-->
                     <tr><td>Date</td>
                         <td>
                             <input type="text" value="<?php echo date("m/d/Y H:i"); ?>" readonly  name="meeting_date">
@@ -101,7 +98,8 @@
                             <input type="text" name="duration" onkeypress="return isNumberKey(event)" size="5" maxlength="3">
                         </td>
                     </tr>
-                    <tr><td>Presentation(Max 2MB)<br>Only PDF or PPT</td><td><input type="file" name="SMLD"  >
+                    <tr><td>Presentation(Max 2MB)<br>Only PDF or PPT</td><td>
+                            <input onchange="fileSelectedChanged();" type="file" name="SMLD"  >
                             <?php
                             if($_SESSION['error']!=""){
                                 echo $_SESSION['error'];
@@ -122,20 +120,30 @@
                 <div id="view1">
                     <h3 style="text-align: center;">Today's Conference</h3>
                     <table align="center" class="rightform" border="1">
-                        <tr><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th><th>Start</th><th>Recordings</th></tr>
+                        <tr><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th><th>Start</th><th>Recordings</th></tr>
                         <?php
                         $result=$dbAccess->getTodayMeetings($_SESSION['owner_id']);
                         while($row=mysql_fetch_array($result)){
                             echo "<tr>";
                             //echo "<td>".$row['meetingid']."</td>";
                             echo "<td>".$row['name']."</td>";
-                            echo "<td>".$row['welcome_msg']."</td>";
+                            echo "<td style='width:200px'>".$row['welcome_msg']."</td>";
                             echo "<td>".$row['speaker']."</td>";
                             echo "<td>".$row['topic']."</td>";
                             echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
                             echo "<td style='text-align: right'>".$row['duration']."</td>";
-                            echo "<td><a target='_blank' href='getJoinMeetingUrlModerator.php?id=".$row['id']."'>Start Conference</a></td>";
-                            echo "<td><a target='_blank' href='getRecordings.php?id=".$row['id']."'>View</a></td>";
+                            if(date('H.i', strtotime("+60 min")) >= str_replace(":",".",$row['meeting_time']) ){
+                                if($row['status']=="accept"){
+                                    echo "<td><a target='_blank' href='getJoinMeetingUrlModerator.php?id=".$row['id']."'>Start Conference</a></td>";
+                                    echo "<td><a target='_blank' class='basic' href='getRecordings.php?id=".$row['id']."'>View</a></td>";
+                                }else{
+                                    echo "<td>&nbsp;</td>";
+                                    echo "<td>&nbsp;</td>";
+                                }
+                            }else{
+                                echo "<td>&nbsp;</td>";
+                                echo "<td>&nbsp;</td>";
+                            }
                             echo "</tr>";
                         }
                         ?>
@@ -145,14 +153,14 @@
                 <div id="view2">
                     <h3 style="text-align: center;">Future Conference</h3>
                     <table align="center" class="rightform" border="1">
-                        <tr><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th></tr>
+                        <tr><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th></tr>
                         <?php
                         $result=$dbAccess->getFutureMeetings($_SESSION['owner_id']);
                         while($row=mysql_fetch_array($result)){
                             echo "<tr>";
                             //echo "<td>".$row['meetingid']."</td>";
                             echo "<td>".$row['name']."</td>";
-                            echo "<td>".$row['welcome_msg']."</td>";
+                            echo "<td style='width:200px'>".$row['welcome_msg']."</td>";
                             echo "<td>".$row['speaker']."</td>";
                             echo "<td>".$row['topic']."</td>";
                             echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
@@ -166,14 +174,14 @@
                 <div id="view3">
                     <h3 style="text-align: center;">Old Conference</h3>
                     <table align="center" class="rightform" border="1">
-                        <tr><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th><th>Recordings</th></tr>
+                        <tr><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th><th>Recordings</th></tr>
                         <?php
                         $result=$dbAccess->getPastMeetings($_SESSION['owner_id']);
                         while($row=mysql_fetch_array($result)){
                             echo "<tr>";
                             //echo "<td>".$row['meetingid']."</td>";
                             echo "<td>".$row['name']."</td>";
-                            echo "<td>".$row['welcome_msg']."</td>";
+                            echo "<td style='width:200px'>".$row['welcome_msg']."</td>";
                             echo "<td>".$row['speaker']."</td>";
                             echo "<td>".$row['topic']."</td>";
                             echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
@@ -192,6 +200,9 @@
         <form name="refreshForm">
             <input type="hidden" name="visited" value="" />
         </form>
+        <div id="basic-modal-content">
+            fdgfdgdfh
+        </div>
     </body>
     </html>
 

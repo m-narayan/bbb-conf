@@ -50,13 +50,13 @@
             <br>
             <h3 style="text-align: center;">Directory</h3>
             <table align="center" class="rightform" border="1">
-            <tr><th>User</th><th>Name</th><th>Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>Action</th></tr>
+            <tr><th>User</th><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>Action</th></tr>
             <?php
                 while($row=mysql_fetch_array($result)){
                     echo "<tr>";
                     echo "<td>".$row['full_name']."</td>";
-                    echo "<td>".$row['name']."</td>";
-                    echo "<td>".$row['welcome_msg']."</td>";
+                    echo "<td><a href='confdetail.php?id=".$row['id']."' >".$row['name']."</a></td>";
+                    echo "<td style='width:200px'>".$row['welcome_msg']."</td>";
                     echo "<td>".$row['speaker']."</td>";
                     echo "<td>".$row['topic']."</td>";
                     echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
