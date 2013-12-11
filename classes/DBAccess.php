@@ -33,6 +33,18 @@
             echo $msg;
         }
 
+        public function getSetting($id){
+            $sql="select a.full_name,b.* from users a,user_settings b where a.id=b.user_id and b.id=".$id;
+            $result=mysql_query($sql);
+            $row=mysql_fetch_array($result);
+            return $row;
+        }
+
+        public function updateSetting($id,$period,$max_conference) {
+            $sql="update user_settings set period=".$period.", max_conference=".$max_conference." where id=".$id;
+            mysql_query($sql);
+        }
+
         public function getAllSettings(){
             $sql="select a.full_name,b.* from users a,user_settings b where a.id=b.user_id order by full_name";
             return(mysql_query($sql));
@@ -99,6 +111,11 @@
 
         public function deleteServer($id) {
             $sql="delete from  servers where id=".$id;
+            mysql_query($sql);
+        }
+
+        public function deleteSettings($id) {
+            $sql="delete from  user_settings where id=".$id;
             mysql_query($sql);
         }
 

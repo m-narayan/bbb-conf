@@ -126,7 +126,7 @@
                         while($row=mysql_fetch_array($result)){
                             echo "<tr>";
                             //echo "<td>".$row['meetingid']."</td>";
-                            echo "<td>".$row['name']."</td>";
+                            echo "<td><a href='confdetail.php?id=".$row['id']."' >".$row['name']."</a></td>";
                             echo "<td style='width:200px'>".$row['welcome_msg']."</td>";
                             echo "<td>".$row['speaker']."</td>";
                             echo "<td>".$row['topic']."</td>";

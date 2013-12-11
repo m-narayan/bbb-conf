@@ -50,7 +50,7 @@
             <br>
             <h3 style="text-align: center;">Directory</h3>
             <table align="center" class="rightform" border="1">
-            <tr><th>User</th><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>Action</th><th>Invite</th></tr>
+            <tr><th>User</th><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th>Duration</th><th>Action</th><th>Broadcast</th></tr>
             <?php
                 while($row=mysql_fetch_array($result)){
                     echo "<tr>";

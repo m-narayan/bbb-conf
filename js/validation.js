@@ -129,3 +129,24 @@ function settings(){
         return true;
     }
 }
+
+function editSettings(){
+    if(trim1(document.frm.max_weekly.value)==""){
+        alert("Please enter Max Conference Weekly");
+        document.frm.max_weekly.focus();
+        return false;
+    }else if(trim1(document.frm.max_monthly.value)==""){
+        alert("Please enter Max Conference Monthly");
+        document.frm.max_monthly.focus();
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function deleteSettings(id){
+    var result = confirm("Are you sure?");
+    if (result==true) {
+        window.location.href="deleteSettings.php?id="+id;
+    }
+}

@@ -80,7 +80,7 @@
             </form>
             <br>
             <table align="center" class="rightform" border="1">
-            <tr><th>User</th><th style="text-align: right;">Period</th><th style='text-align: right;'>Max Conference</th></tr>
+            <tr><th>User</th><th style="text-align: right;">Period</th><th style='text-align: right;'>Max Conference</th><th>Edit</th><th>Delete</th></tr>
             <?php
                 while($row=mysql_fetch_array($result)){
                     echo "<tr>";
@@ -88,6 +88,8 @@
                     $period=array("Weekly","Monthly");
                     echo "<td style='text-align: right;'>".$period[$row['period']]."</td>";
                     echo "<td style='text-align: right;'>".$row['max_conference']."</td>";
+                    echo "<td><a href='editSettings.php?id=".$row['id']."'>Edit</a></td>";
+                    echo "<td><a href='#' onclick='deleteSettings(".$row['id'].")' >Delete</a></td>";
                     echo "</tr>";
                 }
             ?>
