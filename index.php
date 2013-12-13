@@ -58,6 +58,7 @@
                 $row=$dbAccess->getUser($_POST['nametxt'],$_POST['passtxt']);
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['name'] = $row['login'];
+                $_SESSION['full_name'] = $row['full_name'];
                 $_SESSION['password'] = $row['password'];
                 $_SESSION['owner_id'] = $row['id'];
                 $_SESSION['user_type'] = $row['user_type'];

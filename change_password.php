@@ -36,6 +36,7 @@
         <link rel="stylesheet" type="text/css" href="css/Style.css"/>
         <link rel="icon" href="favicon.ico" type="image/x-icon" /
         <link rel="stylesheet" type="text/css" href="css/rhd.css"/>
+        <?php include_once 'assets/main/tipsy.php'; ?>
         <script type="text/javascript" src="js/validation.js"></script>
     </head>
     <body>
@@ -43,6 +44,8 @@
 
         <?php include_once 'assets/main/LeftSideNew.php'; ?>
         <div id="rightform">
+            <div class="RightTextCntr">
+                <div class="contentCntrTab">
             <br>
             <span style="color:green" ><?php echo $success; ?></span>
             <h3 style="text-align: center;">Change Password</h3>
@@ -62,6 +65,8 @@
                     <tr><td align="center" colspan="2"><input type="submit" name="submit" value="Save" class="Btn"></td></tr>
                 </table>
             </form>
+                    </div>
+                </div>
         <?php include_once 'assets/main/FooterNew.php'; ?>
     </body>
     </html>

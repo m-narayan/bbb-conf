@@ -28,7 +28,8 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon" /
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
         <link rel="stylesheet" type="text/css" href="css/jquery.alerts.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="css/rhd.css"/>  
+        <link rel="stylesheet" type="text/css" href="css/rhd.css"/>
+        <?php include_once 'assets/main/tipsy.php'; ?>
 
 
     </head>
@@ -48,6 +49,9 @@
 
         <?php include_once 'assets/main/LeftSideNew.php'; ?>
         <div id="rightform">
+            <div class="RightTextCntr">
+                <div class="contentCntrTab">
+
             <br>
             <h3 style="text-align: center;">Enrolled Conference</h3>
             <table align="center" class="rightform" border="1">
@@ -79,6 +83,8 @@
                 //print_r($response);
             ?>
         </div>
+                </div>
+            </div>
         <?php include_once 'assets/main/FooterNew.php'; ?>
         <form name="refreshForm">
             <input type="hidden" name="visited" value="" />

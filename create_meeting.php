@@ -36,16 +36,14 @@
         <title>Conference</title>
         <!--     Cascading Style Sheet --> 
         <link rel="stylesheet" type="text/css" href="css/Style.css"/>
-        <link rel="icon" href="favicon.ico" type="image/x-icon" /
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="css/rhd.css"/>
-        <link type="text/css" rel="stylesheet" href="css/calendar.css?random=20051112" media="screen"></LINK>
+        <link type="text/css" rel="stylesheet" href="css/calendar.css?random=20051112" media="screen"/>
         <link href="tabcontent/tabcontent.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="js/validation.js"></script>
-        <script type="text/javascript" src="js/basic.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery.simplemodal.js"></script>
 
         <SCRIPT type="text/javascript" src="js/calendar.js?random=20060118"></script>
+        <?php include_once 'assets/main/tipsy.php'; ?>
 
 
         <script src="tabcontent/tabcontent.js" type="text/javascript"></script>
@@ -55,6 +53,7 @@
                 window.open('<?php echo $url; ?>','null',winFeature);
             }
         </script>
+
 
     </head>
     <?php
@@ -73,6 +72,8 @@
 
         <?php include_once 'assets/main/LeftSideNew.php'; ?>
         <div id="rightform">
+            <div class="RightTextCntr">
+                <div class="contentCntrTab">
             <br>
             <h3 style="text-align: center;">Create Conference</h3>
 
@@ -194,14 +195,15 @@
 
                 </div>
             </div>
-
+</div>
         </div>
+            </div>
         <?php include_once 'assets/main/FooterNew.php'; ?>
         <form name="refreshForm">
             <input type="hidden" name="visited" value="" />
         </form>
         <div id="basic-modal-content">
-            fdgfdgdfh
+
         </div>
     </body>
     </html>
