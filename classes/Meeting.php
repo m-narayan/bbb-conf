@@ -196,6 +196,7 @@ class Meeting {
                 if ($result['returncode'] == 'SUCCESS') {
                     // Then do stuff ...
                     // echo "<p>Meeting succesfullly created.</p>";
+                    $dbAccess->setStarted($row['id']);
                 }
                 else {
                     echo "<p>Meeting creation failed.</p>";
@@ -219,7 +220,6 @@ class Meeting {
             echo 'Caught exception: ', $e->getMessage(), "\n";
             $itsAllGood = false;
         }
-
         if ($itsAllGood == true) {
             //print_r($result);
         }

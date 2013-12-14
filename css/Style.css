@@ -217,10 +217,13 @@
 .rightform{
    text-align: left;
    min-width: 30%;
-    margin: 0px auto;
+   margin: 0px auto;
 }
 th{
     background-color: #a7dbe3;
+}
+tr{
+    padding-bottom: 10px;
 }
 
 .headerCntr {
@@ -251,7 +254,7 @@ th{
     height:25px;
     line-height:25px;
     float:right;
-    padding:3px 0 0 0;
+    padding:3px 10px 0 0;
 }
 .RightCntr img {
     float:left;
@@ -365,7 +368,7 @@ th{
     font-size: 12px;
     position: absolute;
     z-index: 100000;
-    margin-top:-30px;
+    margin-top:-10px;
 }
 .tipsy-inner {
     padding: 5px 8px 4px 8px;
@@ -775,4 +778,19 @@ a:focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
+}
+.label-primary {
+    background-color: #428bca;
+}
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
 }

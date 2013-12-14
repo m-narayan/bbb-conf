@@ -33,17 +33,6 @@
         <script type="text/javascript" src="js/validation.js"></script>
         <?php include_once 'assets/main/tipsy.php'; ?>
     </head>
-    <?php
-
-        if (!isset($_COOKIE['user_name'])) {
-
-            // header('Location: authentication.php');
-            // exit();
-        } else {
-            //setcookie("user_name", "", time() - 3600);
-        }
-
-    ?>
     <body>
         <?php include_once 'assets/main/HeaderNew.php'; ?>
 

@@ -56,17 +56,6 @@
 
 
     </head>
-    <?php
-
-        if (!isset($_COOKIE['user_name'])) {
-
-            // header('Location: authentication.php');
-            // exit();
-        } else {
-            //setcookie("user_name", "", time() - 3600);
-        }
-
-    ?>
     <body>
         <?php include_once 'assets/main/HeaderNew.php'; ?>
 
@@ -83,7 +72,7 @@
                     <tr><td>Name</td><td><input type="text" name="name"  size="40" maxlength="250"></td></tr>
                     <tr><td>Welcome Message</td>
                         <td>
-                            <textarea rows="5" cols="39" name="welcome_msg" ></textarea>
+                            <textarea rows="5" cols="40" name="welcome_msg" ></textarea>
                         </td>
                     </tr>
                     <tr><td>Speaker</td><td><input type="text" name="speaker"  size="40" maxlength="250"></td></tr>

@@ -27,7 +27,7 @@ CREATE TABLE `broadcast` (
   `meeting_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,7 +51,7 @@ CREATE TABLE `invitations` (
   `meeting_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,11 +97,12 @@ CREATE TABLE `meetings` (
   `status` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `meeting_time` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slide` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `started` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_bigbluebutton_rooms_on_meetingid` (`meetingid`),
   UNIQUE KEY `index_bigbluebutton_rooms_on_voice_bridge` (`voice_bridge`),
   KEY `index_bigbluebutton_rooms_on_server_id` (`server_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=153 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +132,7 @@ CREATE TABLE `servers` (
   `param` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `status` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +141,7 @@ CREATE TABLE `servers` (
 
 LOCK TABLES `servers` WRITE;
 /*!40000 ALTER TABLE `servers` DISABLE KEYS */;
-INSERT INTO `servers` VALUES (13,'BBB','http://10.1.10.251/bigbluebutton/','d1d0bcb8412bafb6eaac811c2af2b6e2',NULL,NULL,NULL,NULL,1);
+INSERT INTO `servers` VALUES (13,'BBB','http://10.1.10.251/bigbluebutton/','d1d0bcb8412bafb6eaac811c2af2b6e2',NULL,NULL,NULL,NULL,0),(14,'BBB','http://conf.beaconlearning.in/bigbluebutton/','65d486399917e1b316323c3162c84fef',NULL,NULL,NULL,NULL,1);
 /*!40000 ALTER TABLE `servers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +158,7 @@ CREATE TABLE `user_settings` (
   `max_conference` int(11) DEFAULT NULL,
   `period` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,7 +167,6 @@ CREATE TABLE `user_settings` (
 
 LOCK TABLES `user_settings` WRITE;
 /*!40000 ALTER TABLE `user_settings` DISABLE KEYS */;
-INSERT INTO `user_settings` VALUES (1,7,121,0);
 /*!40000 ALTER TABLE `user_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,4 +207,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-05 16:36:32
+-- Dump completed on 2013-12-14 14:22:57

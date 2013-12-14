@@ -5,11 +5,6 @@ require_once('include/bbb-api.php');
 require_once('classes/DBAccess.php');
 require_once('classes/Meeting.php');
 
-$auth_right = new Authorization();
-if(!$auth_right->checkAccessRight()) {
-    //header('Location: index.php');
-}
-
 $meeting=new Meeting();
 $result=$meeting->getRecordings($_GET['id']);
 $url=$result[0]['playbackFormatUrl'];

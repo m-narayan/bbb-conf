@@ -30,18 +30,8 @@
 
 
     </head>
-    <?php
 
-        if (!isset($_COOKIE['user_name'])) {
-
-            // header('Location: authentication.php');
-            // exit();
-        } else {
-            //setcookie("user_name", "", time() - 3600);
-        }
-
-    ?>
-    <body onLoad="changeHashOnLoad();" >
+    <body>
         <?php include_once 'assets/main/HeaderNew.php'; ?>
 
         <?php include_once 'assets/main/LeftSideNew.php'; ?>

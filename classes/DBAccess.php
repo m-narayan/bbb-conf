@@ -159,6 +159,11 @@
             mysql_query($sql) or die(mysql_error());
         }
 
+        public function setStarted($id){
+            $sql="update meetings set started='true' where id=".$id;
+            mysql_query($sql) or die(mysql_error());
+        }
+
         public function addMeeting($server_id,$attendeePw,$moderatorPw,$owner_id,$name,$welcome_msg,$meeting_date,$duration,$speaker,$topic,$slide) {
             $temp=$meeting_date;
             $temp=explode(" ",$temp);
