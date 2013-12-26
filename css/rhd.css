@@ -1,8 +1,8 @@
 .internalManuBar {
-    width: 90%;
+    width: 100%;
     height: 35px;
-    margin-top:-2%;
-    margin-left:10%; 
+    margin-top:0%;
+    /*margin-left:5%;*/
     overflow:hidden;
     color: #3e4a49;
     /*background-color: #f5eedb; */
@@ -59,10 +59,10 @@
 }
 
 .internalDataGridBar {
-    width: 90%;
+    width: 95%;
     margin-top:-.1%;
-    height: 500px;
-    margin-left:10%; 
+    min-height: 500px;
+    padding: 10px 27px;
     /* padding: 50px 60px; */
     overflow:hidden;
     color: #3e4a49;
@@ -122,9 +122,256 @@ div#topdiv {
     text-shadow: 0 1px 1px rgba(0,0,0,.3); 
     font-size: 10pt;
     font-weight: bold;
-   margin-top:2px
+   margin-top:2px;
     width: 100%;
     height: 100px;
     text-align: center;
     margin: 0; 
+}
+
+
+
+
+.headingHeaderMenu{
+    width:98%; height:34px; margin-top:5px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .0em 0.5em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    color:#000000;
+    border: solid 1px #16809A;
+    background: #16809A;
+    background: -webkit-gradient(linear, left top, left bottom, from(#16809A), to(#f7f7f7));
+    background: -moz-linear-gradient(top,  #16809A,  #f7f7f7);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#16809A', endColorstr='#f7f7f7');
+
+}
+
+
+.Tmenu_bgBigCatalogue{
+    width:100%; height:25px; float:left;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .0em 1em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 3px 2px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 3px 2px rgba(0,0,0,.5);
+    box-shadow: 0 3px 2px rgba(0,0,0,.5);
+    color:#FFFFFF;
+    border: solid 1px #6A88B1;
+    background: #6A88B1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6A88B1), to(#f7f7f7));
+    background: -moz-linear-gradient(top,  #6A88B1,  #f7f7f7);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#6A88B1', endColorstr='#f7f7f7');
+}
+
+#rowDataFirstColor{
+    float:left;
+    width:99%;
+    font:normal 12px/15px Arial, Helvetica, sans-serif ;
+    padding-top:5px;
+    color:#0087cb;
+    /*    color:navy;*/
+    height:auto;
+    min-height:20px;
+}
+
+#rowDataFirstColor a{
+    font:normal 12px/15px Arial, Helvetica, sans-serif ;
+    color:#0087cb;
+}
+
+#rowDataSecondColor{
+    width:99%;
+    float:left;
+    background-color:#feffff;
+    color:#0087cb;
+    /*color:gray;*/
+    font:normal 12px/15px Arial, Helvetica, sans-serif ;
+    padding-top:5px;
+    height:auto;
+    min-height:20px;
+}
+#rowDataSecondColor a{
+    font:normal 12px/15px Arial, Helvetica, sans-serif ;
+    color:#0087cb;
+}
+
+
+
+.internalManuBarButton {
+    display: inline-block;
+    zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+    display: inline;
+    vertical-align: baseline;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    width:100px;
+}
+.internalManuBarButton:hover {
+    text-decoration: none;
+}
+.internalManuBarButton:active {
+    position: relative;
+    top: 1px;
+}
+
+
+.AgoraButtonBack {
+    display: inline-block;
+    zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+    display: inline;
+    vertical-align: baseline;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    /*padding: .5em 2em .55em; */
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    width:100px;
+}
+.AgoraButtonBack:hover {
+    text-decoration: none;
+}
+.AgoraButtonBack:active {
+    position: relative;
+    top: 1px;
+}
+.AgoraButtonBackOrange {
+    color:#FFFFFF;
+    border: solid 1px #fd6100;
+    background: #c62801;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c62801), to(#fd6100));
+    background: -moz-linear-gradient(top,  #c62801,  #fd6100);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62801', endColorstr='#fd6100');
+
+}
+.menuBG1 {
+    float: left;
+    list-style: none;
+    font: bold 13px Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+    width: auto;
+    height: 12px;
+    color: black;
+    padding: 11px 5px;
+    text-align: left;
+    border-right: 1px solid #c0c1c2;
+}
+#pag{
+    float:left;
+    width:100%;
+    /*margin-left: -3px;*/
+    background-color:#F3EBC5;
+    color:black;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    vertical-align: middle;
+    padding-top:1px;
+    padding-bottom: 1px;
+    /*height:20px;*/
+
+    min-height:25px;
+}
+#pag a{
+    font:normal 12px/15px Arial, Helvetica, sans-serif ;
+    color:#0087cb;
+}
+
+#pag1{
+    float:left;
+    /*margin-left: -3px;*/
+    width:100%;
+    background-color:#D1D1D1;
+    /*font:normal 12px/15px verdana,Arial, Helvetica, sans-serif ;*/
+    padding-top:1px;
+    padding-bottom: 1px;
+    /* color:#0087cb;*/
+    color:navy;
+    /*height:20px;*/
+     min-height:25px;
+}
+#pag1 a{
+    font:normal 12px/15px Arial, Helvetica, sans-serif ;
+    color:#0087cb;
+}
+#crDate {
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 2px;
+}
+.server_name{width:12%; float:left; text-align:left; }
+.bbb_url{width:25%; float:left; text-align:left;word-wrap: break-word; }
+.salt{width:26%; float:left; text-align:left; }
+.status{width:14%; float:left; text-align:left;}
+.edit{width:12%; float:left; text-align:left;}
+.delete {float: left; width: 10%;  text-align:left;  }
+.user{width:45%; float:left; text-align:left; }
+.period{width:14%; float:left; text-align:left;}
+.max_conf{width:15%; float:left; text-align:left; }
+
+.name{width:11%; float:left; text-align:left; }
+.directory_user{width:12%; float:left; text-align:left;word-wrap: break-word; }
+.message{width:16%; float:left; text-align:left; }
+.speaker{width:10%; float:left; text-align:left;}
+.topic{width:10%; float:left; text-align:left;}
+.date {float: left; width: 12%;  text-align:left;  }
+.duration{width:10%; float:left; text-align:left; }
+.action{width:6%; float:left; text-align:left;}
+.broadcast{width:10%; float:left; text-align:left; }
+
+
+.Tmenu_bgBigCatalogue {
+    width: 100%;
+    height: 25px;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .0em 1em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 3px 2px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 3px 2px rgba(0,0,0,.5);
+    box-shadow: 0 3px 2px rgba(0,0,0,.5);
+    color: #FFFFFF;
+    border: solid 1px #6A88B1;
+    background: #6A88B1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6A88B1), to(#f7f7f7));
+    background: -moz-linear-gradient(top, #6A88B1, #f7f7f7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6A88B1', endColorstr='#f7f7f7');
 }

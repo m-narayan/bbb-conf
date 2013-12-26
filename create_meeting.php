@@ -108,79 +108,150 @@
             </ul>
             <div class="tabcontents">
                 <div id="view1">
-                    <h3 style="text-align: center;">Today's Conference</h3>
-                    <table align="center" class="rightform" border="1">
-                        <tr><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th><th>Start</th><th>Recordings</th></tr>
-                        <?php
-                        $result=$dbAccess->getTodayMeetings($_SESSION['owner_id']);
-                        while($row=mysql_fetch_array($result)){
-                            echo "<tr>";
-                            //echo "<td>".$row['meetingid']."</td>";
-                            echo "<td><a href='confdetail.php?id=".$row['id']."' >".$row['name']."</a></td>";
-                            echo "<td style='width:200px'>".$row['welcome_msg']."</td>";
-                            echo "<td>".$row['speaker']."</td>";
-                            echo "<td>".$row['topic']."</td>";
-                            echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
-                            echo "<td style='text-align: right'>".$row['duration']."</td>";
+                    <div class="internalManuBar" ><h3 style="text-align: center;">Today's Conference</h3>
+                    </div>
+                    <div class="internalDataGridBar">
+                        <div class="Tmenu_bgBigCatalogue" style="width:97%;">
+                            <div class="menuBG1" style="text-align:left; width:10%;">Name</div>
+                            <div class="menuBG1" style="text-align:left; width:15%;">Welcome Message</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Speaker</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Topic</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Date</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Duration</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Start</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;border: none;">Recordings</div>
+                        </div>
+                        <div id="crDate">
+                            <?php
+                            $sl = 1;
+                            $result=$dbAccess->getTodayMeetings($_SESSION['owner_id']);
+                            while($row=mysql_fetch_array($result)){
+                            $period=array("Weekly","Monthly");
+                            if ($sl % 2 == 1) {
+                                echo "<div id='pag'>";
+                            }else{
+                                echo "<div id='pag1'>";
+                            }
+                            ?>
+                            <div class='name' style='width:12%;' ><a href='confdetail.php?id=<?php echo $row['id']?>' ><?php echo $row['name'];?></a></div>
+                            <div class='message' ><?php echo $row['welcome_msg']; ?></div>
+                            <div class='speaker' style='width:11%;'><?php echo $row['speaker'];?></div>
+                            <div class='topic' ><?php echo $row['topic'];?></div>
+                            <div class='date' ><?php echo $dbAccess->fromDBDate($row['meeting_date'])." ". $row['meeting_time']; ?></div>
+                            <div class='duration' ><?php echo $row['duration'];?></div>
+                            <?php
                             if(date('H.i', strtotime("+60 min")) >= str_replace(":",".",$row['meeting_time']) ){
                                 if($row['status']=="accept"){
-                                    echo "<td><a target='_blank' href='getJoinMeetingUrlModerator.php?id=".$row['id']."'>Start Conference</a></td>";
-                                    echo "<td><a target='_blank' class='basic' href='getRecordings.php?id=".$row['id']."'>View</a></td>";
+                                    echo "<div class='action' style='width:11%;'><a target='_blank' href='getJoinMeetingUrlModerator.php?id=".$row['id']."'>Start Conference</a></div>";
+                                    echo "<div class='action' style='width:11%;'><a target='_blank' class='basic' href='getRecordings.php?id=".$row['id']."'>View</a></div>";
                                 }else{
-                                    echo "<td>&nbsp;</td>";
-                                    echo "<td>&nbsp;</td>";
+                                    echo "<div class='action' style='width:11%;'>&nbsp;</div>";
+                                    echo "<div class='action' style='width:11%;'>&nbsp;</div>";
                                 }
                             }else{
-                                echo "<td>&nbsp;</td>";
-                                echo "<td>&nbsp;</td>";
+                                echo "<div class='action' style='width:11%;'>&nbsp;</div>";
+                                echo "<div class='action' style='width:11%;'>&nbsp;</div>";
                             }
-                            echo "</tr>";
-                        }
-                        ?>
-                    </table>
+
+                            ?>
+                        </div>
+                    </div>
+
+                    <?php
+                    ++$sl;
+
+                    } ?>
+
+                </div>
+
+
+
+
 
                 </div>
                 <div id="view2">
-                    <h3 style="text-align: center;">Future Conference</h3>
-                    <table align="center" class="rightform" border="1">
-                        <tr><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th></tr>
-                        <?php
-                        $result=$dbAccess->getFutureMeetings($_SESSION['owner_id']);
-                        while($row=mysql_fetch_array($result)){
-                            echo "<tr>";
-                            //echo "<td>".$row['meetingid']."</td>";
-                            echo "<td>".$row['name']."</td>";
-                            echo "<td style='width:200px'>".$row['welcome_msg']."</td>";
-                            echo "<td>".$row['speaker']."</td>";
-                            echo "<td>".$row['topic']."</td>";
-                            echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
-                            echo "<td style='text-align: right'>".$row['duration']."</td>";
-                            echo "</tr>";
-                        }
-                        ?>
-                    </table>
+                    <div class="internalManuBar" ><h3 style="text-align: center;">Future Conference</h3>
+                    </div>
+                    <div class="internalDataGridBar">
+                        <div class="Tmenu_bgBigCatalogue" style="width:97%;">
+                            <div class="menuBG1" style="text-align:left; width:10%;">Name</div>
+                            <div class="menuBG1" style="text-align:left; width:40%;">Welcome Message</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Speaker</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Topic</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Date</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;border:none;">Duration</div>
+                         </div>
+                        <div id="crDate">
+                            <?php
+                            $sl = 1;
+                            $result=$dbAccess->getFutureMeetings($_SESSION['owner_id']);
+                            while($row=mysql_fetch_array($result)){
+                            $period=array("Weekly","Monthly");
+                            if ($sl % 2 == 1) {
+                                echo "<div id='pag'>";
+                            }else{
+                                echo "<div id='pag1'>";
+                            }
+                            ?>
+                            <div class='name' style='width:12%;' ><a href='confdetail.php?id=<?php echo $row['id']?>' ><?php echo $row['name'];?></a></div>
+                            <div class='message' style='width:40%;'><?php echo $row['welcome_msg']; ?></div>
+                            <div class='speaker' style='width:11%;'><?php echo $row['speaker'];?></div>
+                            <div class='topic' ><?php echo $row['topic'];?></div>
+                            <div class='date' ><?php echo $dbAccess->fromDBDate($row['meeting_date'])." ". $row['meeting_time']; ?></div>
+                            <div class='duration'><?php echo $row['duration'];?></div>
 
+                        </div>
+
+
+                    <?php
+                    ++$sl;
+
+                    } ?>
+                    </div>
+                </div>
                 </div>
                 <div id="view3">
-                    <h3 style="text-align: center;">Old Conference</h3>
-                    <table align="center" class="rightform" border="1">
-                        <tr><th>Name</th><th style="width:200px">Welcome Message</th><th>Speaker</th><th>Topic</th><th>Date</th><th style="text-align: right">Duration</th><th>Recordings</th></tr>
-                        <?php
-                        $result=$dbAccess->getPastMeetings($_SESSION['owner_id']);
-                        while($row=mysql_fetch_array($result)){
-                            echo "<tr>";
-                            //echo "<td>".$row['meetingid']."</td>";
-                            echo "<td>".$row['name']."</td>";
-                            echo "<td style='width:200px'>".$row['welcome_msg']."</td>";
-                            echo "<td>".$row['speaker']."</td>";
-                            echo "<td>".$row['topic']."</td>";
-                            echo "<td>".$dbAccess->fromDBDate($row['meeting_date'])."&nbsp;".$row['meeting_time']."</td>";
-                            echo "<td style='text-align: right'>".$row['duration']."</td>";
-                            echo "<td><a target='_blank' href='getRecordings.php?id=".$row['id']."'>View</a></td>";
-                            echo "</tr>";
-                        }
-                        ?>
-                    </table>
+                    <div class="internalManuBar" ><h3 style="text-align: center;">Old Conference</h3>
+                    </div>
+                    <div class="internalDataGridBar">
+                        <div class="Tmenu_bgBigCatalogue" style="width:97%;">
+                            <div class="menuBG1" style="text-align:left; width:10%;">Name</div>
+                            <div class="menuBG1" style="text-align:left; width:30%;">Welcome Message</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Speaker</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Topic</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Date</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;">Duration</div>
+                            <div class="menuBG1" style="text-align:left; width:10%;border:none;">Recordings</div>
+                        </div>
+                        <div id="crDate">
+                            <?php
+                            $sl = 1;
+                            $result=$dbAccess->getPastMeetings($_SESSION['owner_id']);
+                            while($row=mysql_fetch_array($result)){
+                            $period=array("Weekly","Monthly");
+                            if ($sl % 2 == 1) {
+                                echo "<div id='pag'>";
+                            }else{
+                                echo "<div id='pag1'>";
+                            }
+                            ?>
+                            <div class='name' style='width:12%;' ><a href='confdetail.php?id=<?php echo $row['id']?>' ><?php echo $row['name'];?></a></div>
+                            <div class='message' style='width:30%;'><?php echo $row['welcome_msg']; ?></div>
+                            <div class='speaker' style='width:11%;'><?php echo $row['speaker'];?></div>
+                            <div class='topic' ><?php echo $row['topic'];?></div>
+                            <div class='date' ><?php echo $dbAccess->fromDBDate($row['meeting_date'])." ". $row['meeting_time']; ?></div>
+                            <div class='duration'><?php echo $row['duration'];?></div>
+                            <div class='duration'><a target='_blank' href='getRecordings.php?id=<?php echo $row['id'];?>'>View</a>
+                            </div>
+                        </div>
+
+
+                    <?php
+                    ++$sl;
+
+                    } ?>
+                    </div>
+                </div>
 
                 </div>
             </div>

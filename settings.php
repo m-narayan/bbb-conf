@@ -25,10 +25,9 @@
     <head>
         <meta charset="utf-8" /> 
         <title>Conference</title>
-        <!--     Cascading Style Sheet --> 
         <link rel="stylesheet" type="text/css" href="css/Style.css"/>
-        <link rel="icon" href="favicon.ico" type="image/x-icon" /
         <link rel="stylesheet" type="text/css" href="css/rhd.css"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" /
 
         <script type="text/javascript" src="js/validation.js"></script>
         <?php include_once 'assets/main/tipsy.php'; ?>
@@ -67,22 +66,44 @@
                     <tr><td align="center" colspan="2"><input type="submit" name="submit" value="Save" class="Btn"></td></tr>
                 </table>
             </form>
-            <br>
-            <table align="center" class="rightform" border="1">
-            <tr><th>User</th><th style="text-align: right;">Period</th><th style='text-align: right;'>Max Conference</th><th>Edit</th><th>Delete</th></tr>
-            <?php
-                while($row=mysql_fetch_array($result)){
-                    echo "<tr>";
-                    echo "<td>".$row['full_name']."</td>";
-                    $period=array("Weekly","Monthly");
-                    echo "<td style='text-align: right;'>".$period[$row['period']]."</td>";
-                    echo "<td style='text-align: right;'>".$row['max_conference']."</td>";
-                    echo "<td><a href='editSettings.php?id=".$row['id']."'>Edit</a></td>";
-                    echo "<td><a href='#' onclick='deleteSettings(".$row['id'].")' >Delete</a></td>";
-                    echo "</tr>";
-                }
-            ?>
-            </table>
+                    <br>
+                    <div class="internalManuBar" ></div>
+                    <div class="internalDataGridBar">
+                        <div class="Tmenu_bgBigCatalogue" style="width:97%;">
+                            <div class="menuBG1" style="text-align:left; width:44%;">User</div>
+                            <div class="menuBG1" style="text-align:left; width:13%;">Period</div>
+                            <div class="menuBG1" style="text-align:left; width:15%;">Max Conference</div>
+                           <div class="menuBG1" style="text-align:left; width:11%;">Edit</div>
+                            <div class="menuBG1" style="text-align:left; width:5%; border:none;">Delete</div>
+                        </div>
+                        <div id="crDate">
+                            <?php
+                            $sl = 1;
+                            while($row=mysql_fetch_array($result)){
+                            $period=array("Weekly","Monthly");
+                            if ($sl % 2 == 1) {
+                                echo "<div id='pag'>";
+                            }else{
+                                echo "<div id='pag1'>";
+                            }
+                            ?>
+
+
+                            <div class='user'  ><?php echo $row['full_name']; ?></div>
+                            <div class='period' ><?php echo $period[$row['period']]; ?></div>
+                            <div class='max_conf' ><?php echo $row['max_conference']; ?></div>
+                            <div class='edit' ><a href='editSettings.php?id=<?php echo $row['id'];?>'>Edit</a></div>
+                            <div class='delete' >
+                                <a href='#' onclick='deleteSettings("<?php echo $row['id'];?>")' >Delete</a>
+                            </div>
+                        </div>
+
+                        <?php
+                        ++$sl;
+
+                        } ?>
+
+                    </div>
         </div>
                 </div>
             </div>
