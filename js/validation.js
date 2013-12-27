@@ -102,7 +102,6 @@ function meeting(id){
                 response=xmlhttp.responseText;
             }
         }
-        alert(id);
         xmlhttp.open("GET","../../ajax/max_meeting.php?id="+id,false);
         xmlhttp.send();
         if(response==""){

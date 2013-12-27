@@ -14,7 +14,7 @@
             if($period==0){
                 $date=date("Ymd");
                 $date = date("Ymd",strtotime(date("Ymd", strtotime($date)) . "-6 day"));
-                $sql="select count(*) as meeting_count from meetings where owner_id=".$user_id." and meeting_date >=".$date." and meeting_date<=".date(Ymd);
+                $sql="select count(*) as meeting_count from meetings where owner_id=".$user_id." and meeting_date >=".$date." and meeting_date<=".date("Ymd");
                 $result=mysql_query($sql);
                 $row=mysql_fetch_array($result);
                 if($max_conference != -1 && $row['meeting_count'] >= $max_conference  ){
@@ -23,7 +23,7 @@
             }else if($period==1){
                 $date=date("Ymd");
                 $date = date("Ymd",strtotime(date("Ymd", strtotime($date)) . "-1 month"));
-                $sql="select count(*) as meeting_count from meetings where owner_id=".$user_id." and meeting_date >=".$date." and meeting_date<=".date(Ymd);
+                $sql="select count(*) as meeting_count from meetings where owner_id=".$user_id." and meeting_date >=".$date." and meeting_date<=".date("Ymd");
                 $result=mysql_query($sql);
                 $row=mysql_fetch_array($result);
                 if($max_conference != -1 && $row['meeting_count'] >= $max_conference  ){
