@@ -28,11 +28,11 @@
         <meta charset="utf-8" /> 
         <title>Conference</title>
         <!--     Cascading Style Sheet --> 
-        <link rel="stylesheet" type="text/css" href="css/Style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../css/Style.css"/>
 
-        <link rel="stylesheet" type="text/css" href="css/rhd.css"/>
+        <link rel="stylesheet" type="text/css" href="../../css/rhd.css"/>
         <?php include_once 'assets/main/tipsy.php'; ?>
-        <script type="text/javascript" src="js/validation.js"></script>
+        <script type="text/javascript" src="../../js/validation.js"></script>
 
     </head>
     <body>

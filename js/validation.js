@@ -113,21 +113,23 @@ function meeting(id){
 }
 
 function settings(){
-    if(document.frm.user.selectedIndex==0){
-        alert("Please select user");
-        document.frm.user.focus();
-        return false;
-    }else if(trim1(document.frm.max_weekly.value)==""){
-        alert("Please enter Max Conference Weekly");
-        document.frm.max_weekly.focus();
-        return false;
-    }else if(trim1(document.frm.max_monthly.value)==""){
-        alert("Please enter Max Conference Monthly");
-        document.frm.max_monthly.focus();
-        return false;
-    }else{
-        return true;
-    }
+    alert("ok");
+    return false;
+//    if(document.frm.user.selectedIndex==0){
+//        alert("Please select user");
+//        document.frm.user.focus();
+//        return false;
+//    }else if(trim1(document.frm.max_weekly.value)==""){
+//        alert("Please enter Max Conference Weekly");
+//        document.frm.max_weekly.focus();
+//        return false;
+//    }else if(trim1(document.frm.max_monthly.value)==""){
+//        alert("Please enter Max Conference Monthly");
+//        document.frm.max_monthly.focus();
+//        return false;
+//    }else{
+//        return true;
+//    }
 }
 
 function editSettings(){

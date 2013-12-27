@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include 'include/db.php';
-    require_once('classes/Authorization.php');
-    require_once('classes/DBAccess.php');
+    require_once '../../include/db.php';
+    require_once('../../classes/Authorization.php');
+    require_once('../../classes/DBAccess.php');
 
     $auth_right = new Authorization();
     if(!$auth_right->checkAccessRight()) {
@@ -26,17 +26,17 @@
         <meta charset="utf-8" /> 
         <title>Conference</title>
         <!--     Cascading Style Sheet --> 
-        <link rel="stylesheet" type="text/css" href="css/Style.css"/>
-        <link rel="stylesheet" type="text/css" href="css/rhd.css"/>
-        <link rel="icon" href="favicon.ico" type="image/x-icon" /
-        <?php include_once 'assets/main/tipsy.php'; ?>
-        <script type="text/javascript" src="js/validation.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../css/Style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../css/rhd.css"/>
+        <link rel="icon" href="../../favicon.ico" type="image/x-icon" /
+        <?php include_once '../../assets/main/tipsy.php'; ?>
+        <script type="text/javascript" src="../../js/validation.js"></script>
 
     </head>
     <body>
-        <?php include_once 'assets/main/HeaderNew.php'; ?>
+        <?php include_once '../../assets/main/HeaderNew.php'; ?>
 
-        <?php include_once 'assets/main/LeftSideNew.php'; ?>
+        <?php include_once '../../assets/main/LeftSideNew.php'; ?>
         <div id="rightform">
             <div class="RightTextCntr">
                 <div class="contentCntrTab">
@@ -107,7 +107,7 @@
 
                 </div>
             </div>
-        <?php include_once 'assets/main/FooterNew.php'; ?>
+        <?php include_once '../../assets/main/FooterNew.php'; ?>
         <form name="refreshForm">
             <input type="hidden" name="visited" value="" />
         </form>

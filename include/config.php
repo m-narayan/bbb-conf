@@ -9,4 +9,5 @@ define('BBB_PRESENTATION_URL' , 'http://10.1.10.252/SupUploads/s001/');
 //define("LOGOUT_URL", "http://localhost/bbb");
 define("LOGOUT_URL", "http://10.1.10.27");
 
+
 ?>

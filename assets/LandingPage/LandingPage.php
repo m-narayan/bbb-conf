@@ -1,9 +1,11 @@
 <?php
-    session_start();
-    include 'include/config.php';
-    require_once('classes/Login.php');
-    require_once('classes/EncryptDecrypt.php');
-    require_once('classes/Authorization.php');
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    require_once '../../include/config.php';
+    require_once('../../classes/Login.php');
+    require_once('../../classes/EncryptDecrypt.php');
+    require_once('../../classes/Authorization.php');
 
     $auth_right = new Authorization();
     if(!$auth_right->checkAccessRight()) {
@@ -18,20 +20,20 @@
         <meta charset="utf-8" /> 
         <title>Conference</title>
 
-        <link rel="stylesheet" type="text/css" href="css/Style.css"/>
-        <link rel="icon" href="favicon.ico" type="image/x-icon" /
+        <link rel="stylesheet" type="text/css" href="../../css/Style.css"/>
+        <link rel="icon" href="../../favicon.ico" type="image/x-icon" /
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
-        <link rel="stylesheet" type="text/css" href="css/jquery.alerts.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="css/rhd.css"/>  
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.alerts.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../../css/rhd.css"/>
 
-        <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
-        <script type="text/javascript" src="js/jquery.ui.draggable.js" ></script>    
-        <script type="text/javascript" src="js/jquery.alerts.js"></script>
-        <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
-        <script type="text/javascript" src="js/jquery-ui.js"></script>      
-        <script type="text/javascript" src='js/jquery.simplemodal.js'></script>
-        <script type="text/javascript" src='assets/Catalogue/js/Catalogue.js'></script>
-        <script type="text/javascript" src="js/LoginFields.js"></script>
+        <script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+        <script type="text/javascript" src="../../js/jquery.ui.draggable.js" ></script>
+        <script type="text/javascript" src="../../js/jquery.alerts.js"></script>
+        <script type="text/javascript" src="../../js/jquery-1.8.3.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui.js"></script>
+        <script type="text/javascript" src='../../js/jquery.simplemodal.js'></script>
+        <script type="text/javascript" src='../../assets/Catalogue/js/Catalogue.js'></script>
+        <script type="text/javascript" src="../../js/LoginFields.js"></script>
 
 
         <script type="text/javascript">
@@ -87,11 +89,11 @@
 
     ?>
     <body onLoad="changeHashOnLoad();" >
-        <?php include_once 'assets/main/HeaderNew.php'; ?>
+        <?php include_once '../../assets/main/HeaderNew.php'; ?>
 
-        <?php include_once 'assets/main/LeftSideNew.php'; ?>
-        <?php include_once 'assets/main/RightSideNew.php'; ?>
-        <?php include_once 'assets/main/FooterNew.php'; ?>
+        <?php include_once '../../assets/main/LeftSideNew.php'; ?>
+        <?php include_once '../../assets/main/RightSideNew.php'; ?>
+        <?php include_once '../../assets/main/FooterNew.php'; ?>
         <form name="refreshForm">
             <input type="hidden" name="visited" value="" />
         </form>
