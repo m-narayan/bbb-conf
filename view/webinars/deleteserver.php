@@ -4,11 +4,6 @@
     require_once('../../classes/Authorization.php');
     require_once('../../classes/DBAccess.php');
 
-    $auth_right = new Authorization();
-    if(!$auth_right->checkAccessRight()) {
-        header('Location: index.php');
-    }
-
     require_once 'check.php';
 
     $dbAccess= new DBAccess();

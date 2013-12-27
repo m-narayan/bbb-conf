@@ -5,12 +5,8 @@
     require_once('../../classes/Authorization.php');
     require_once('../../classes/DBAccess.php');
 
-    $auth_right = new Authorization();
-    if(!$auth_right->checkAccessRight()) {
-        header('Location: index.php');
-    }
+    require_once 'check.php';
 
-    include 'check.php';
     $dbAccess = new DBAccess();
     if(isset($_POST['submit'])){
         $dbAccess->addUserSettings($_POST['user'],$_POST['period'],$_POST['max_conference']);
@@ -29,9 +25,8 @@
         <link rel="stylesheet" type="text/css" href="../../css/Style.css"/>
         <link rel="stylesheet" type="text/css" href="../../css/rhd.css"/>
         <link rel="icon" href="../../favicon.ico" type="image/x-icon" /
-
-        <script type="text/javascript" src="../../js/validation.js"></script>
         <?php require_once '../../assets/main/tipsy.php'; ?>
+        <script type="text/javascript" src="../../js/validation.js"></script>
     </head>
     <body>
         <?php require_once '../../assets/main/HeaderNew.php'; ?>
@@ -42,8 +37,8 @@
                 <div class="contentCntrTab">
             <br>
             <h3 style="text-align: center;">Settings</h3>
-            <form method="post" action="" name="frm" onsubmit="return settings();">
-                <table align="center" class="rightform">
+            <form method="post" action="" name="frm" onsubmit="return settings();" >
+                <table align="center" class="rightform" cellpadding="5">
                     <tr><td>User</td>
                         <td>
                             <select name="user">

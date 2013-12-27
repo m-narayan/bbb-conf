@@ -241,7 +241,8 @@
 
         public function getInvitations($owner_id){
             $sql="select a.*,b.full_name from meetings a,users b where a.status='accept' and a.owner_id=b.id and owner_id<>".$owner_id;
-            $sql=$sql." and a.id  in (select meeting_id from broadcast where user_id=".$owner_id.")";
+            $sql=$sql." and a.id  in (select meeting_id from broadcast where user_id=".$owner_id." and meeting_id not in ";
+            $sql=$sql." (select meeting_id from invitations where user_id=".$owner_id."))";
             return(mysql_query($sql));
         }
 
@@ -267,6 +268,8 @@
         }
 
         public function enroll($meeting_id,$user_id){
+            $sql="delete from invitations where meeting_id=".$meeting_id." and user_id=".$user_id;
+            mysql_query($sql);
             $sql="insert into invitations (meeting_id,user_id) values(".$meeting_id.",".$user_id.")";
             mysql_query($sql);
         }

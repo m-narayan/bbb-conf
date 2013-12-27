@@ -1,3 +1,4 @@
+
 function change_password(){
     if(trim1(document.frm.old_pass.value)==""){
         alert("Please enter old password");
@@ -101,7 +102,8 @@ function meeting(id){
                 response=xmlhttp.responseText;
             }
         }
-        xmlhttp.open("GET","ajax/max_meeting.php?id="+id,false);
+        alert(id);
+        xmlhttp.open("GET","../../ajax/max_meeting.php?id="+id,false);
         xmlhttp.send();
         if(response==""){
             return true;
@@ -113,33 +115,24 @@ function meeting(id){
 }
 
 function settings(){
-    alert("ok");
-    return false;
-//    if(document.frm.user.selectedIndex==0){
-//        alert("Please select user");
-//        document.frm.user.focus();
-//        return false;
-//    }else if(trim1(document.frm.max_weekly.value)==""){
-//        alert("Please enter Max Conference Weekly");
-//        document.frm.max_weekly.focus();
-//        return false;
-//    }else if(trim1(document.frm.max_monthly.value)==""){
-//        alert("Please enter Max Conference Monthly");
-//        document.frm.max_monthly.focus();
-//        return false;
-//    }else{
-//        return true;
-//    }
+    if(document.frm.user.selectedIndex==0){
+        alert("Please select user");
+        document.frm.user.focus();
+        return false;
+    }else if(trim1(document.frm.max_conference.value)==""){
+        alert("Please enter Max Conference");
+        document.frm.max_conference.focus();
+        return false;
+    }else{
+        return true;
+    }
 }
 
+
 function editSettings(){
-    if(trim1(document.frm.max_weekly.value)==""){
-        alert("Please enter Max Conference Weekly");
-        document.frm.max_weekly.focus();
-        return false;
-    }else if(trim1(document.frm.max_monthly.value)==""){
-        alert("Please enter Max Conference Monthly");
-        document.frm.max_monthly.focus();
+    if(trim1(document.frm.max_conference.value)==""){
+        alert("Please enter Max Conference");
+        document.frm.max_conference.focus();
         return false;
     }else{
         return true;

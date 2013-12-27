@@ -4,34 +4,34 @@
     <list default="true" id="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" name="Default" comment="" />
     <ignored path="supp.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/a.dummy" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388035974629" ignored="false" />
+    <file path="/a.dummy" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388144145424" ignored="false" />
     <file path="$PROJECT_DIR$/includes/config.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385015451660" ignored="false" />
     <file path="/db.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385017668648" ignored="false" />
     <file path="/Login.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388058007752" ignored="false" />
     <file path="/index.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386149262772" ignored="false" />
     <file path="/Authorization.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385025019856" ignored="false" />
     <file path="/LandingPage.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385027366158" ignored="false" />
-    <file path="/LeftSideNew.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388125465075" ignored="false" />
-    <file path="/server.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388041918788" ignored="false" />
+    <file path="/LeftSideNew.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388127756876" ignored="false" />
+    <file path="/server.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388145017902" ignored="false" />
     <file path="/RightSideNew.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386919215967" ignored="false" />
     <file path="/Style.css" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1387010818685" ignored="false" />
     <file path="/HeaderNew.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388125025243" ignored="false" />
-    <file path="/create_meeting.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388051077054" ignored="false" />
+    <file path="/create_meeting.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388144567504" ignored="false" />
     <file path="/getJoinMeetingUrlModerator.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385445268078" ignored="false" />
     <file path="/check.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385094532442" ignored="false" />
-    <file path="/editserver.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386920604837" ignored="false" />
+    <file path="/editserver.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388145084883" ignored="false" />
     <file path="/Server.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385195180648" ignored="false" />
     <file path="/deleteserver.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385195419999" ignored="false" />
     <file path="/Meeting.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1387019564941" ignored="false" />
     <file path="/join_requests.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386926403781" ignored="false" />
-    <file path="/enroll.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385112473048" ignored="false" />
+    <file path="/enroll.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388137612813" ignored="false" />
     <file path="/deenroll.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385113468637" ignored="false" />
     <file path="/enrolled_conference.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388055778169" ignored="false" />
     <file path="/bbb-api.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1387007999657" ignored="false" />
-    <file path="/validation.js" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388125421548" ignored="false" />
-    <file path="/DBAccess.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388057007768" ignored="false" />
+    <file path="/validation.js" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388138600043" ignored="false" />
+    <file path="/DBAccess.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388145637306" ignored="false" />
     <file path="/getJoinMeetingUrlAttendee.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385354074983" ignored="false" />
-    <file path="/settings.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388125246634" ignored="false" />
+    <file path="/settings.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388126257091" ignored="false" />
     <file path="/max_meeting.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388057083239" ignored="false" />
     <file path="/test.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388056749948" ignored="false" />
     <file path="/recordings.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1385370549860" ignored="false" />
@@ -50,10 +50,10 @@
     <file path="/reject.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386226043118" ignored="false" />
     <file path="/directory.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388049488994" ignored="false" />
     <file path="/change_password.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386920339058" ignored="false" />
-    <file path="/confdetail.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386920382145" ignored="false" />
+    <file path="/confdetail.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388128956311" ignored="false" />
     <file path="/invite.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386920810044" ignored="false" />
     <file path="/invitations.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388051696971" ignored="false" />
-    <file path="/editSettings.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386920446304" ignored="false" />
+    <file path="/editSettings.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388144997925" ignored="false" />
     <file path="/deleteSettings.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1386745548171" ignored="false" />
     <file path="$PROJECT_DIR$/../bbbapi/includes/bbb-api.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1387008196413" ignored="false" />
     <file path="$PROJECT_DIR$/../sup-webinar/view/Products/ProductQAView.php" changelist="2039f1c6-49c6-4c96-9dbe-38cff9b1e84e" time="1388121285930" ignored="false" />
@@ -80,67 +80,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/webinars/settings.php">
+      <file leaf-file-name="confdetail.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/webinars/confdetail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="68" selection-start="4513" selection-end="4513" vertical-scroll-proportion="-41.875">
+            <state line="56" column="0" selection-start="2125" selection-end="2346" vertical-scroll-proportion="-20.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="invite.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/webinars/invite.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="0" selection-start="2377" selection-end="2377" vertical-scroll-proportion="-18.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="directory.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/webinars/directory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="0" selection-start="4330" selection-end="4330" vertical-scroll-proportion="-10.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="join_requests.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/webinars/join_requests.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="0" selection-start="3757" selection-end="3757" vertical-scroll-proportion="-9.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="enrolled_conference.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/webinars/enrolled_conference.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="0" selection-start="4854" selection-end="4854" vertical-scroll-proportion="-10.083333">
               <folding>
-                <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1388125853842" expanded="true" signature="1194:1654" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="1234:1654" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="1279:1654" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="1321:1340" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="1438:1654" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="1495:1654" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="1520:1654" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="1562:1654" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="1611:1654" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="2885:3838" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="2963:3499" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="3021:3048" placeholder="..." />
-                <marker date="1388125853842" expanded="true" signature="3541:3838" placeholder="..." />
+                <marker date="1388146196200" expanded="false" signature="4599:4608" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deleteserver.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/webinars/deleteserver.php">
+      <file leaf-file-name="invitations.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/webinars/invitations.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="24" selection-start="145" selection-end="145" vertical-scroll-proportion="-2.5">
+            <state line="75" column="0" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.54325956">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validation.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/validation.js">
+      <file leaf-file-name="create_meeting.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/webinars/create_meeting.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="17" selection-start="3493" selection-end="3493" vertical-scroll-proportion="0.09123435">
+            <state line="70" column="72" selection-start="2682" selection-end="2698" vertical-scroll-proportion="68.75">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeftSideNew.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/main/LeftSideNew.php">
+      <file leaf-file-name="DBAccess.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/DBAccess.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="23" selection-start="613" selection-end="613" vertical-scroll-proportion="-5.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/webinars/server.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="34" selection-start="1181" selection-end="1181" vertical-scroll-proportion="-10.416667">
+            <state line="238" column="0" selection-start="10289" selection-end="10289" vertical-scroll-proportion="-9.458333">
               <folding />
             </state>
           </provider>
@@ -156,22 +164,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/classes/Login.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/view/webinars/LeftSideNew.php" />
-        <option value="$PROJECT_DIR$/view/webinars/editSettings.php" />
-        <option value="$PROJECT_DIR$/view/webinars/tipsy.php" />
-        <option value="$PROJECT_DIR$/include/config.php" />
-        <option value="$PROJECT_DIR$/view/webinars/body.php" />
-        <option value="$PROJECT_DIR$/view/webinars/webinar.php" />
-        <option value="$PROJECT_DIR$/assets/LandingPage/LandingPage.php" />
-        <option value="$PROJECT_DIR$/assets/main/HeaderNew.php" />
-        <option value="$PROJECT_DIR$/body.php" />
-        <option value="$PROJECT_DIR$/assets/main/LeftSideNew.php" />
-        <option value="$PROJECT_DIR$/view/webinars/server.php" />
-        <option value="$PROJECT_DIR$/view/webinars/deleteserver.php" />
-        <option value="$PROJECT_DIR$/view/webinars/settings.php" />
+        <option value="$PROJECT_DIR$/view/webinars/reject.php" />
+        <option value="$PROJECT_DIR$/view/webinars/check.php" />
         <option value="$PROJECT_DIR$/js/validation.js" />
+        <option value="$PROJECT_DIR$/js/calendar.js" />
+        <option value="$PROJECT_DIR$/css/Style.css" />
+        <option value="$PROJECT_DIR$/view/webinars/create_meeting.php" />
+        <option value="$PROJECT_DIR$/view/webinars/settings.php" />
+        <option value="$PROJECT_DIR$/view/webinars/editSettings.php" />
+        <option value="$PROJECT_DIR$/view/webinars/server.php" />
+        <option value="$PROJECT_DIR$/view/webinars/editserver.php" />
+        <option value="$PROJECT_DIR$/view/webinars/invite.php" />
+        <option value="$PROJECT_DIR$/classes/DBAccess.php" />
+        <option value="$PROJECT_DIR$/view/webinars/directory.php" />
+        <option value="$PROJECT_DIR$/view/webinars/join_requests.php" />
+        <option value="$PROJECT_DIR$/view/webinars/enrolled_conference.php" />
+        <option value="$PROJECT_DIR$/view/webinars/invitations.php" />
       </list>
     </option>
   </component>
@@ -249,56 +257,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bbb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bbb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bbb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LandingPage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -370,14 +328,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="-8" width="1386" height="761" extended-state="7" />
+    <frame x="-10" y="-8" width="1386" height="761" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2667173" sideWeight="0.6706282" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26899695" sideWeight="0.6706282" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -386,7 +345,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -455,135 +413,116 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/main/RightSideNew.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/DBAccess.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="737" selection-end="737" vertical-scroll-proportion="-7.793103">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/CommonFunctions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.23364486">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Catalogue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.637931">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/webinars/editSettings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="34" selection-start="3279" selection-end="3279" vertical-scroll-proportion="-12.583333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/main/tipsy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="42" selection-start="118" selection-end="118" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="285" selection-end="285" vertical-scroll-proportion="-6.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/main/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="125.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/LandingPage/LandingPage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="50" selection-start="3622" selection-end="3622" vertical-scroll-proportion="-15.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/main/HeaderNew.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="23" selection-start="463" selection-end="463" vertical-scroll-proportion="-5.6666665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/body.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="59" selection-end="59" vertical-scroll-proportion="-1.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/main/LeftSideNew.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="613" selection-end="613" vertical-scroll-proportion="-5.625">
+        <state line="6" column="64" selection-start="306" selection-end="306" vertical-scroll-proportion="0.1682243">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/webinars/deleteserver.php">
+    <entry file="file://$PROJECT_DIR$/css/calendar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="145" selection-end="145" vertical-scroll-proportion="-2.5">
+        <state line="17" column="16" selection-start="333" selection-end="333" vertical-scroll-proportion="-9.807693">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/webinars/server.php">
+    <entry file="file://$PROJECT_DIR$/js/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="34" selection-start="1181" selection-end="1181" vertical-scroll-proportion="-10.416667">
+        <state line="63" column="24" selection-start="3456" selection-end="3456" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/webinars/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="68" selection-start="4513" selection-end="4513" vertical-scroll-proportion="-41.875">
+        <state line="40" column="56" selection-start="1374" selection-end="1374" vertical-scroll-proportion="-6.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webinars/editSettings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="72" selection-start="1489" selection-end="1489" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webinars/editserver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="70" selection-start="1451" selection-end="1451" vertical-scroll-proportion="-7.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webinars/server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="43" selection-start="1826" selection-end="1826" vertical-scroll-proportion="-5.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="3" selection-start="6" selection-end="19" vertical-scroll-proportion="0.027472528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webinars/confdetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="0" selection-start="2125" selection-end="2346" vertical-scroll-proportion="-20.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webinars/invite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="0" selection-start="2377" selection-end="2377" vertical-scroll-proportion="-18.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/DBAccess.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="238" column="0" selection-start="10289" selection-end="10289" vertical-scroll-proportion="-9.458333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webinars/create_meeting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="72" selection-start="2682" selection-end="2698" vertical-scroll-proportion="68.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webinars/directory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="0" selection-start="4330" selection-end="4330" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webinars/join_requests.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="3757" selection-end="3757" vertical-scroll-proportion="-9.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/webinars/enrolled_conference.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="0" selection-start="4854" selection-end="4854" vertical-scroll-proportion="-10.083333">
           <folding>
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1388125853842" expanded="true" signature="1194:1654" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="1234:1654" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="1279:1654" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="1321:1340" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="1438:1654" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="1495:1654" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="1520:1654" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="1562:1654" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="1611:1654" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="2885:3838" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="2963:3499" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="3021:3048" placeholder="..." />
-            <marker date="1388125853842" expanded="true" signature="3541:3838" placeholder="..." />
+            <marker date="1388146196200" expanded="false" signature="4599:4608" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/validation.js">
+    <entry file="file://$PROJECT_DIR$/view/webinars/invitations.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="17" selection-start="3493" selection-end="3493" vertical-scroll-proportion="0.09123435">
+        <state line="75" column="0" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.54325956">
           <folding />
         </state>
       </provider>
