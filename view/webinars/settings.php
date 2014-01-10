@@ -24,7 +24,7 @@
         <title>Conference</title>
         <link rel="stylesheet" type="text/css" href="../../css/Style.css"/>
         <link rel="stylesheet" type="text/css" href="../../css/rhd.css"/>
-        <link rel="icon" href="../../favicon.ico" type="image/x-icon" /
+        <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" /
         <?php require_once '../../assets/main/tipsy.php'; ?>
         <script type="text/javascript" src="../../js/validation.js"></script>
     </head>

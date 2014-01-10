@@ -26,7 +26,7 @@
         <!--     Cascading Style Sheet --> 
         <link rel="stylesheet" type="text/css" href="../../css/Style.css"/>
         <link rel="stylesheet" type="text/css" href="../../css/rhd.css"/>
-        <link rel="icon" href="../../favicon.ico" type="image/x-icon" /
+        <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" /
 
         <?php include_once '../../assets/main/tipsy.php'; ?>
 

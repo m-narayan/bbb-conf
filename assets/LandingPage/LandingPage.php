@@ -21,9 +21,8 @@
         <title>Conference</title>
 
         <link rel="stylesheet" type="text/css" href="../../css/Style.css"/>
-        <link rel="icon" href="../../favicon.ico" type="image/x-icon" /
+        <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" /
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
-        <link rel="stylesheet" type="text/css" href="../../css/jquery.alerts.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../../css/rhd.css"/>
 
         <script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>

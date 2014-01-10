@@ -62,7 +62,7 @@
                 $_SESSION['password'] = $row['password'];
                 $_SESSION['owner_id'] = $row['id'];
                 $_SESSION['user_type'] = $row['user_type'];
-                header('Location: body.php?pages=LND');
+                header("Location: assets/LandingPage/LandingPage.php");
             }
             }
         }           
@@ -79,7 +79,7 @@
             <meta charset="utf-8" />
             <title>Login</title>
             <link rel="stylesheet" type="text/css" href="css/Login.css"/>
-            <link rel="icon" href="favicon.ico" type="image/x-icon" /
+            <link rel="icon" href="images/favicon.ico" type="image/x-icon" /
             <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
             <script type="text/javascript" src="js/login.js"></script>
 

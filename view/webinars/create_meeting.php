@@ -36,17 +36,17 @@
         <title>Conference</title>
         <!--     Cascading Style Sheet --> 
         <link rel="stylesheet" type="text/css" href="../../css/Style.css"/>
-        <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../../css/rhd.css"/>
         <link type="text/css" rel="stylesheet" href="../../css/calendar.css?random=20051112" media="screen"/>
-        <link href="../../tabcontent/tabcontent.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/tabcontent.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../../js/validation.js"></script>
 
         <SCRIPT type="text/javascript" src="../../js/calendar.js?random=20060118"></script>
         <?php require_once '../../assets/main/tipsy.php'; ?>
 
 
-        <script src="../../tabcontent/tabcontent.js" type="text/javascript"></script>
+        <script src="../../js/tabcontent.js" type="text/javascript"></script>
         <script>
             function openRecording(id){
                 var winFeature ='location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes';
